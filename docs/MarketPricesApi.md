@@ -1,6 +1,6 @@
 # data_bridges_client.MarketPricesApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/6.0.0*
+All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **market_prices_alps_get**
-> ViewExtendedAlpsValuePagedResult market_prices_alps_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
+> ExtendedAlpsValueDtoPagedResult market_prices_alps_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
 
 Returns time series values of ALPS and PEWI.
 
@@ -24,14 +24,14 @@ Returns time series values of ALPS and PEWI.
 
 ```python
 import data_bridges_client
-from data_bridges_client.models.view_extended_alps_value_paged_result import ViewExtendedAlpsValuePagedResult
+from data_bridges_client.models.extended_alps_value_dto_paged_result import ExtendedAlpsValueDtoPagedResult
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ViewExtendedAlpsValuePagedResult**](ViewExtendedAlpsValuePagedResult.md)
+[**ExtendedAlpsValueDtoPagedResult**](ExtendedAlpsValueDtoPagedResult.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **market_prices_price_daily_get**
-> ViewExtendedAggregatedPricePagedResult market_prices_price_daily_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
+> ViewExtendedMonthlyAggregatedPricePagedResult market_prices_price_daily_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
 
 Returns a daily time series of commodity market prices.
 
@@ -122,14 +122,14 @@ Returns a daily time series of commodity market prices.
 
 ```python
 import data_bridges_client
-from data_bridges_client.models.view_extended_aggregated_price_paged_result import ViewExtendedAggregatedPricePagedResult
+from data_bridges_client.models.view_extended_monthly_aggregated_price_paged_result import ViewExtendedMonthlyAggregatedPricePagedResult
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ViewExtendedAggregatedPricePagedResult**](ViewExtendedAggregatedPricePagedResult.md)
+[**ViewExtendedMonthlyAggregatedPricePagedResult**](ViewExtendedMonthlyAggregatedPricePagedResult.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **market_prices_price_monthly_get**
-> ViewExtendedAggregatedPricePagedResult market_prices_price_monthly_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
+> ViewExtendedMonthlyAggregatedPricePagedResult market_prices_price_monthly_get(country_code=country_code, market_id=market_id, commodity_id=commodity_id, price_type_name=price_type_name, currency_id=currency_id, price_flag=price_flag, start_date=start_date, end_date=end_date, latest_value_only=latest_value_only, page=page, format=format, env=env)
 
 Returns a monthly time series of commodity market prices.
 
@@ -220,14 +220,14 @@ Returns a monthly time series of commodity market prices.
 
 ```python
 import data_bridges_client
-from data_bridges_client.models.view_extended_aggregated_price_paged_result import ViewExtendedAggregatedPricePagedResult
+from data_bridges_client.models.view_extended_monthly_aggregated_price_paged_result import ViewExtendedMonthlyAggregatedPricePagedResult
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ViewExtendedAggregatedPricePagedResult**](ViewExtendedAggregatedPricePagedResult.md)
+[**ViewExtendedMonthlyAggregatedPricePagedResult**](ViewExtendedMonthlyAggregatedPricePagedResult.md)
 
 ### Authorization
 
@@ -322,10 +322,10 @@ from data_bridges_client.models.paged_commodity_price_list_dto import PagedCommo
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -420,10 +420,10 @@ from data_bridges_client.models.paged_commodity_weekly_aggregated_price_list_dto
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
