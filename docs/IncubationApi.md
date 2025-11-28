@@ -1,11 +1,11 @@
 # data_bridges_client.IncubationApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/6.0.0*
+All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aims_download_all_analysis_rounds_get**](IncubationApi.md#aims_download_all_analysis_rounds_get) | **GET** /Aims/DownloadAllAnalysisRounds | Each asset has a baseline and several rounds. Each round reflects the number of times the asset   has been analysed over time. The number of total rounds changes according to the workstream:   Asset Detection (AD) assets can have a total of 5 rounds, while there is no limit to the monitoring of   Landscape Impact Assessment (LIA) assets. Assets considered for Site Prioritization (SP) have one round only.   Please note that adm0code can be obtained from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
-[**aims_download_polygon_files_get**](IncubationApi.md#aims_download_polygon_files_get) | **GET** /Aims/DownloadPolygonFiles | Polygon files are available for Landscape Impact Assessment (LIA) assets only.   The file name corresponds to the “Geotrace” name. Please note that adm0code can be obtained   from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
+[**cari_adm0_values_get**](IncubationApi.md#cari_adm0_values_get) | **GET** /Cari/Adm0Values | Retrieves a paginated list of Adm0 CARI results based on the specified indicator, administrative code, and  survey.
+[**cari_adm1_values_get**](IncubationApi.md#cari_adm1_values_get) | **GET** /Cari/Adm1Values | Retrieves a paginated list of Adm1 CARI results based on the specified indicator, administrative code, and  survey.
 [**household_draft_internal_base_data_get**](IncubationApi.md#household_draft_internal_base_data_get) | **GET** /Household/DraftInternalBaseData | Get data that includes the core household fields only by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \&quot;apiKey\&quot; can be found in the profile section of the DataBridges application.
 [**household_full_data_get**](IncubationApi.md#household_full_data_get) | **GET** /Household/FullData | Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \&quot;apiKey\&quot; can be found in the profile section of the DataBridges application.
 [**household_official_use_base_data_get**](IncubationApi.md#household_official_use_base_data_get) | **GET** /Household/OfficialUseBaseData | Get data that includes the core household fields only by Survey ID
@@ -15,12 +15,12 @@ Method | HTTP request | Description
 [**xls_forms_definition_get**](IncubationApi.md#xls_forms_definition_get) | **GET** /XlsForms/definition | Get a complete set of XLS Form definitions of a given XLS Form ID. This is the digital version of the questionnaire used during the data collection exercise.
 
 
-# **aims_download_all_analysis_rounds_get**
-> aims_download_all_analysis_rounds_get(adm0_code, env=env)
+# **cari_adm0_values_get**
+> CariAdm0ValuesDTOPagedResult cari_adm0_values_get(adm0_code=adm0_code, survey_id=survey_id, indicator_id=indicator_id, page=page, env=env)
 
-Each asset has a baseline and several rounds. Each round reflects the number of times the asset   has been analysed over time. The number of total rounds changes according to the workstream:   Asset Detection (AD) assets can have a total of 5 rounds, while there is no limit to the monitoring of   Landscape Impact Assessment (LIA) assets. Assets considered for Site Prioritization (SP) have one round only.   Please note that adm0code can be obtained from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
+Retrieves a paginated list of Adm0 CARI results based on the specified indicator, administrative code, and  survey.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_aims-downloadallanalysisrounds_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_cari-adm0values_get\"  This method returns a paginated list of results based on the provided filters. Ensure              that the parameters are valid and correspond to existing data in the repository. If an error occurs during              processing, a bad request response is returned with the error details.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -28,13 +28,14 @@ Each asset has a baseline and several rounds. Each round reflects the number of 
 
 ```python
 import data_bridges_client
+from data_bridges_client.models.cari_adm0_values_dto_paged_result import CariAdm0ValuesDTOPagedResult
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -48,14 +49,19 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with data_bridges_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_bridges_client.IncubationApi(api_client)
-    adm0_code = 56 # int | The country adm0Code
+    adm0_code = 56 # int | The administrative level 0 code to filter the results. (optional)
+    survey_id = 56 # int | The unique identifier of the survey to filter the results. (optional)
+    indicator_id = 56 # int | The unique identifier of the indicator to filter the results. (optional)
+    page = 1 # int | The page number for pagination. Defaults to 1. (optional) (default to 1)
     env = 'env_example' # str | Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org (optional)
 
     try:
-        # Each asset has a baseline and several rounds. Each round reflects the number of times the asset   has been analysed over time. The number of total rounds changes according to the workstream:   Asset Detection (AD) assets can have a total of 5 rounds, while there is no limit to the monitoring of   Landscape Impact Assessment (LIA) assets. Assets considered for Site Prioritization (SP) have one round only.   Please note that adm0code can be obtained from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
-        api_instance.aims_download_all_analysis_rounds_get(adm0_code, env=env)
+        # Retrieves a paginated list of Adm0 CARI results based on the specified indicator, administrative code, and  survey.
+        api_response = api_instance.cari_adm0_values_get(adm0_code=adm0_code, survey_id=survey_id, indicator_id=indicator_id, page=page, env=env)
+        print("The response of IncubationApi->cari_adm0_values_get:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling IncubationApi->aims_download_all_analysis_rounds_get: %s\n" % e)
+        print("Exception when calling IncubationApi->cari_adm0_values_get: %s\n" % e)
 ```
 
 
@@ -65,12 +71,15 @@ with data_bridges_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adm0_code** | **int**| The country adm0Code | 
+ **adm0_code** | **int**| The administrative level 0 code to filter the results. | [optional] 
+ **survey_id** | **int**| The unique identifier of the survey to filter the results. | [optional] 
+ **indicator_id** | **int**| The unique identifier of the indicator to filter the results. | [optional] 
+ **page** | **int**| The page number for pagination. Defaults to 1. | [optional] [default to 1]
  **env** | **str**| Environment.   * &#x60;prod&#x60; - api.vam.wfp.org   * &#x60;dev&#x60; - dev.api.vam.wfp.org | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**CariAdm0ValuesDTOPagedResult**](CariAdm0ValuesDTOPagedResult.md)
 
 ### Authorization
 
@@ -79,22 +88,23 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **aims_download_polygon_files_get**
-> aims_download_polygon_files_get(adm0_code, env=env)
+# **cari_adm1_values_get**
+> CariAdm1ValuesDTOPagedResult cari_adm1_values_get(adm0_code=adm0_code, survey_id=survey_id, indicator_id=indicator_id, page=page, env=env)
 
-Polygon files are available for Landscape Impact Assessment (LIA) assets only.   The file name corresponds to the “Geotrace” name. Please note that adm0code can be obtained   from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
+Retrieves a paginated list of Adm1 CARI results based on the specified indicator, administrative code, and  survey.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_aims-downloadpolygonfiles_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_cari-adm1values_get\"  This method returns a paginated list of results based on the provided filters. Ensure              that the parameters are valid and correspond to existing data in the repository. If an error occurs during              processing, a bad request response is returned with the error details.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -102,13 +112,14 @@ Polygon files are available for Landscape Impact Assessment (LIA) assets only.  
 
 ```python
 import data_bridges_client
+from data_bridges_client.models.cari_adm1_values_dto_paged_result import CariAdm1ValuesDTOPagedResult
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -122,14 +133,19 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with data_bridges_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_bridges_client.IncubationApi(api_client)
-    adm0_code = 56 # int | The country adm0Code
+    adm0_code = 56 # int | The administrative level 0 code to filter the results. (optional)
+    survey_id = 56 # int | The unique identifier of the survey to filter the results. (optional)
+    indicator_id = 56 # int | The unique identifier of the indicator to filter the results. (optional)
+    page = 1 # int | The page number for pagination. Defaults to 1. (optional) (default to 1)
     env = 'env_example' # str | Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org (optional)
 
     try:
-        # Polygon files are available for Landscape Impact Assessment (LIA) assets only.   The file name corresponds to the “Geotrace” name. Please note that adm0code can be obtained   from https://api.vam.wfp.org/geodata/swagger/index.html (VPN access only).
-        api_instance.aims_download_polygon_files_get(adm0_code, env=env)
+        # Retrieves a paginated list of Adm1 CARI results based on the specified indicator, administrative code, and  survey.
+        api_response = api_instance.cari_adm1_values_get(adm0_code=adm0_code, survey_id=survey_id, indicator_id=indicator_id, page=page, env=env)
+        print("The response of IncubationApi->cari_adm1_values_get:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling IncubationApi->aims_download_polygon_files_get: %s\n" % e)
+        print("Exception when calling IncubationApi->cari_adm1_values_get: %s\n" % e)
 ```
 
 
@@ -139,12 +155,15 @@ with data_bridges_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adm0_code** | **int**| The country adm0Code | 
+ **adm0_code** | **int**| The administrative level 0 code to filter the results. | [optional] 
+ **survey_id** | **int**| The unique identifier of the survey to filter the results. | [optional] 
+ **indicator_id** | **int**| The unique identifier of the indicator to filter the results. | [optional] 
+ **page** | **int**| The page number for pagination. Defaults to 1. | [optional] [default to 1]
  **env** | **str**| Environment.   * &#x60;prod&#x60; - api.vam.wfp.org   * &#x60;dev&#x60; - dev.api.vam.wfp.org | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**CariAdm1ValuesDTOPagedResult**](CariAdm1ValuesDTOPagedResult.md)
 
 ### Authorization
 
@@ -153,13 +172,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -180,10 +200,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -266,10 +286,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -354,10 +374,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -437,10 +457,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -520,10 +540,10 @@ from data_bridges_client.models.household_survey_list_dto_paged_result import Ho
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -606,10 +626,10 @@ from data_bridges_client.models.paged_processed_data_dto import PagedProcessedDa
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -698,10 +718,10 @@ from data_bridges_client.models.xls_form_definition_new_schema_dto import XlsFor
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/6.0.0
+# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/6.0.0"
+    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
 )
 
 # The client must configure the authentication and authorization parameters
