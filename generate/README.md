@@ -26,5 +26,5 @@ mv ./token.py data_bridges_client/
 ```
 openapi-generator-cli generate -g python -i generate/swagger.json -o . --package-name data_bridges_client --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
 ```
-4. Manually revert changes to `setup.py` and `README.md`. These relate to additional functionality we developed to handle the WFP token refresh workflow.
+4. Manually revert changes to `setup.py`, `README.md` and `License.md`. These relate to additional functionality we developed to handle the WFP token refresh workflow.
 5. Commit, push and open a PR into `dev` for review.
