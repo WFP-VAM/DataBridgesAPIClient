@@ -50,7 +50,9 @@ class WfpApiToken:
             "POST",
             f"{self.BASE_URL}/token",
             body={"grant_type": "client_credentials", "scope": " ".join(scopes)},
-            headers=urllib3.make_headers(basic_auth=f"{self.api_key}:{self.api_secret}"),
+            headers=urllib3.make_headers(
+                basic_auth=f"{self.api_key}:{self.api_secret}"
+            ),
         )
         return resp
 
