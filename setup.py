@@ -22,7 +22,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # http://pypi.python.org/pypi/setuptools
 NAME = "data-bridges-client"
 VERSION = "7.0.0"
-PYTHON_REQUIRES = ">=3.9"
+PYTHON_REQUIRES = ">=3.10"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
     "python-dateutil",
