@@ -22,6 +22,12 @@ pip install git+https://github.com/WFP-VAM/DataBridgesAPI.git
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/WFP-VAM/DataBridgesAPI.git`)
 
+For local development, install from the project metadata in `pyproject.toml`:
+
+```sh
+pip install .
+```
+
 Then import the package:
 ```python
 import data_bridges_client
@@ -29,12 +35,11 @@ import data_bridges_client
 
 ### Setuptools
 
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+The package metadata is declared in `pyproject.toml`. `setup.py` remains only as a compatibility wrapper for older tooling.
 
 ```sh
-python setup.py install --user
+pip install .
 ```
-(or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
 ```python
@@ -280,5 +285,4 @@ Authentication schemes defined for the API:
 ## Author
 
 wfp.economicanalysis@wfp.org
-
 
