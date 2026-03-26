@@ -29,6 +29,7 @@ REQUIRES = [
     "python-dateutil",
     "pydantic >= 2",
     "typing-extensions >= 4.7.1",
+    "httpx >= 0.23",
 ]
 
 setup(
