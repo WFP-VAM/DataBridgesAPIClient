@@ -17,5 +17,7 @@ openapi-generator-cli generate -g python -i generate/swagger.json -o . --package
 uvx migrate-to-uv
 
 uv lock --upgrade
+uv add --group dev isort black ruff
+
 rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
 
