@@ -29,17 +29,12 @@ codestyle:
 #* Tests
 .PHONY: test
 test:
-	uv run pytest -c pyproject.toml --cov-report=html --cov=data_bridges_knots tests/
-	uv run coverage-badge -o assets/images/coverage.svg -f
+	uv run pytest -c pyproject.toml --cov-report=html --cov=data_bridges_client test/
 
 #* Typing
 .PHONY: mypy
 mypy:
 	uv run mypy --config-file pyproject.toml ./
-
-# .PHONY: check-safety
-# check-safety:
-# 	uv run bandit -r src
 
 #* All in one
 .PHONY: lint
