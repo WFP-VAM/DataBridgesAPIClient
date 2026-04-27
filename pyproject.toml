@@ -1,8 +1,8 @@
 [project]
 name = "data_bridges_client"
-version = "1.0.0"
+version = "7.0.1"
 description = "VAM-Data-Bridges"
-authors = [{ name = "VAM-INFO", email = "wfp.economicanalysis@wfp.org" }]
+authors = [{ name = "VAM-INFO", email = "wfp.vaminfo@wfp.org" }]
 requires-python = ">=3.9"
 readme = "README.md"
 keywords = [
@@ -28,7 +28,14 @@ dev = [
     "flake8>= 4.0.0",
     "types-python-dateutil>= 2.8.19.14",
     "mypy>= 1.5",
+    "isort",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "isort",
+]
+
 
 [tool.uv]
 default-groups = "all"
@@ -40,6 +47,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
+
+[tool.setuptools.packages.find]
+exclude = ["generate"]
 
 [tool.mypy]
 files = [
