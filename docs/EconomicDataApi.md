@@ -13,7 +13,23 @@ Method | HTTP request | Description
 
 Returns the lists of indicators.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_economicdata-indicatorlist_get\"  Returns the lists of indicators for which Vulnerability Analysis and Mapping - Economic and Market Analysis Unit has redistribution licensing from Trading Economics. No mandatory parameter.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_economicdata-indicatorlist_get"
+
+Returns the lists of indicators for which Vulnerability Analysis and Mapping - Economic and Market Analysis Unit has redistribution licensing from Trading Economics. No mandatory parameter.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -97,7 +113,23 @@ Name | Type | Description  | Notes
 
 Returns the time series of values for different indicators.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_economicdata_get\"  Indicator name as retrieved from /EconomicData/IndicatorList is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_economicdata_get"
+
+Indicator name as retrieved from /EconomicData/IndicatorList is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 

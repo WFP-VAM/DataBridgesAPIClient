@@ -16,7 +16,23 @@ Method | HTTP request | Description
 
 Retrieves a paginated list of historical IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-historicalpeaks_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_ipcch-ipcchandequivalent-historicalpeaks_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -98,7 +114,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of the latest IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-latestpeaks_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_ipcch-ipcchandequivalent-latestpeaks_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -178,7 +210,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of the most recent IPCCH and Equivalent data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-mostrecent_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_ipcch-ipcchandequivalent-mostrecent_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -258,7 +306,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of IPCCH and Equivalent Peaks data for the WFP Dashboard.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalentpeakswfpdashboard_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_ipcch-ipcchandequivalentpeakswfpdashboard_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -338,7 +402,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of IPCCH and Equivalent Historical Data.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcch-historicaldata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_ipcch-ipcch-historicaldata_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 

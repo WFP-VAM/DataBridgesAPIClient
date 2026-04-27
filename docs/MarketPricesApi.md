@@ -16,7 +16,23 @@ Method | HTTP request | Description
 
 Returns time series values of ALPS and PEWI.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_marketprices-alps_get\"  Returns the full time series of the Alert for Price Spikes (ALPS) and the value of the Price Early Warning Index (PEWI). Methodology is available in [DataViz](https://dataviz.vam.wfp.org/) and [VAM-Resource Centre](https://resources.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-alps_get"
+
+Returns the full time series of the Alert for Price Spikes (ALPS) and the value of the Price Early Warning Index (PEWI). Methodology is available in [DataViz](https://dataviz.vam.wfp.org/) and [VAM-Resource Centre](https://resources.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -114,7 +130,24 @@ Name | Type | Description  | Notes
 
 Returns a daily time series of commodity market prices.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_marketprices-pricedaily_get\"  This is the highest frequency available. Data is flagged according to its pre-processing characteristics.  Actual data is collected originally with daily frequency; aggregated data returns an empty list; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package;        forecasted data is a six months prediction obtained through different methods, which are reported in the API.  For country specific meta-data please refer to documentation available in DataLibrary. For specific methodological notes on forecasts and imputations refer to the dedicated page in DataViz.  Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-pricedaily_get"
+
+This is the highest frequency available. Data is flagged according to its pre-processing characteristics.
+Actual data is collected originally with daily frequency; aggregated data returns an empty list; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package;        forecasted data is a six months prediction obtained through different methods, which are reported in the API.  For country specific meta-data please refer to documentation available in DataLibrary. For specific methodological notes on forecasts and imputations refer to the dedicated page in DataViz.  Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -212,7 +245,23 @@ Name | Type | Description  | Notes
 
 Returns a monthly time series of commodity market prices.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_marketprices-pricemonthly_get\"  This is the lowest frequency available and the most complete data source. Data is flagged according to its pre-processing characteristics. actual data is collected originally with monthly frequency; aggregated data is collected with higher frequency (daily or weekly) averaged through a weighted mean to monthly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-pricemonthly_get"
+
+This is the lowest frequency available and the most complete data source. Data is flagged according to its pre-processing characteristics. actual data is collected originally with monthly frequency; aggregated data is collected with higher frequency (daily or weekly) averaged through a weighted mean to monthly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -310,7 +359,23 @@ Name | Type | Description  | Notes
 
 Returns original commodity market prices
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_marketprices-priceraw_get\"  Restricted endpoint. Returns the original data with the entire Commodity Price Metadata as inserted by the focal point, which might contain sensitive or personal informatio. Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-priceraw_get"
+
+Restricted endpoint. Returns the original data with the entire Commodity Price Metadata as inserted by the focal point, which might contain sensitive or personal informatio. Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -408,7 +473,23 @@ Name | Type | Description  | Notes
 
 Returns a weekly time series of commodity market prices.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_marketprices-priceweekly_get\"  Weeks used as reference are the International Organization for Standardization (ISO) week-numbering year (ISO-8601). Data is flagged according to its pre-processing characteristics. Aactual data is collected originally with weekly frequency; aggregated data is collected with higher frequency (daily) averaged through a weighted mean to weekly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-priceweekly_get"
+
+Weeks used as reference are the International Organization for Standardization (ISO) week-numbering year (ISO-8601). Data is flagged according to its pre-processing characteristics. Aactual data is collected originally with weekly frequency; aggregated data is collected with higher frequency (daily) averaged through a weighted mean to weekly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 

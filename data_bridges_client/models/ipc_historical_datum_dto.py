@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, Stric
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class IpcHistoricalDatumDto(BaseModel):
     """
@@ -84,7 +85,8 @@ class IpcHistoricalDatumDto(BaseModel):
     __properties: ClassVar[List[str]] = ["analysisId", "analysisTitle", "iso3Alpha3", "countryName", "analysisDate", "StartDate_CurrentPeriod", "EndDate_CurrentPeriod", "StartDate_ProjectedPeriod", "EndDate_ProjectedPeriod", "StartDate_SecondProjectedPeriod", "EndDate_SecondProjectedPeriod", "population", "populationPercentage", "phase3PlusPopulation", "phase3PlusPercentage", "estimatedPopulation", "phase1Population", "phase1Percentage", "phase2Population", "phase2Percentage", "phase3Population", "phase3Percentage", "phase4Population", "phase4Percentage", "phase5Population", "phase5Percentage", "phase3PlusPopulationProjected", "phase3PlusPercentageProjected", "estimatedPopulationProjected", "phase1PopulationProjected", "phase1PercentageProjected", "phase2PopulationProjected", "phase2PercentageProjected", "phase3PopulationProjected", "phase3PercentageProjected", "phase4PopulationProjected", "phase4PercentageProjected", "phase5PopulationProjected", "phase5PercentageProjected", "phase3PlusPopulationSecondProjected", "phase3PlusPercentageSecondProjected", "estimatedPopulationSecondProjected", "phase1PopulationSecondProjected", "phase1PercentageSecondProjected", "phase2PopulationSecondProjected", "phase2PercentageSecondProjected", "phase3PopulationSecondProjected", "phase3PercentageSecondProjected", "phase4PopulationSecondProjected", "phase4PercentageSecondProjected", "phase5PopulationSecondProjected", "phase5PercentageSecondProjected"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -96,8 +98,7 @@ class IpcHistoricalDatumDto(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

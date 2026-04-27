@@ -14,7 +14,23 @@ Method | HTTP request | Description
 
 Return the latest country dataset of number of acutely food insecure (in thousands)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-countrylatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_globaloutlook-countrylatest_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -90,7 +106,23 @@ Name | Type | Description  | Notes
 
 Return the latest global dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-globallatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_globaloutlook-globallatest_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -166,7 +198,23 @@ Name | Type | Description  | Notes
 
 Return the latest regional dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-regionallatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_globaloutlook-regionallatest_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 

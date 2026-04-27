@@ -13,7 +13,23 @@ Method | HTTP request | Description
 
 Retrieves Hunger Hotspot categories and indicators.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_hungerhotspot-categoriesandindicators_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_hungerhotspot-categoriesandindicators_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -89,7 +105,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of Hunger Hotspot data.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_hungerhotspot-data_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+
+[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+
+[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+
+### This endpoint is restricted, it requires the scope: "vamdatabridges_hungerhotspot-data_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 

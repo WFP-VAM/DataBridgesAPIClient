@@ -13,7 +13,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from data_bridges_client.models.bad_request_dto import BadRequestDTO
 from data_bridges_client.models.cari_adm0_values_dto import CariAdm0ValuesDTO
@@ -82,3 +81,4 @@ from data_bridges_client.models.xls_form_definition_new_schema_dto import XlsFor
 from data_bridges_client.models.xls_form_fields_dto import XlsFormFieldsDTO
 from data_bridges_client.models.xls_form_list_choice_dto import XlsFormListChoiceDTO
 from data_bridges_client.models.xls_form_list_choices_dto import XlsFormListChoicesDTO
+
