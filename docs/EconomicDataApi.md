@@ -1,6 +1,6 @@
 # data_bridges_client.EconomicDataApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,13 +15,13 @@ Returns the lists of indicators.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_economicdata-indicatorlist_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_economicdata-indicatorlist\_get"
 
 Returns the lists of indicators for which Vulnerability Analysis and Mapping - Economic and Market Analysis Unit has redistribution licensing from Trading Economics. No mandatory parameter.
 
@@ -41,10 +41,10 @@ from data_bridges_client.models.economic_indicator_property_paged_result import 
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,13 +115,13 @@ Returns the time series of values for different indicators.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_economicdata_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_economicdata\_get"
 
 Indicator name as retrieved from /EconomicData/IndicatorList is mandatory.
 
@@ -141,10 +141,10 @@ from data_bridges_client.models.paged_economic_data_dto import PagedEconomicData
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

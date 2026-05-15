@@ -1,6 +1,6 @@
 # data_bridges_client.CommoditiesApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,13 +15,13 @@ Provides the list of categories.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_commodities-categories-list_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_commodities-categories-list\_get"
 
 Categories are matched with high level WFP commodity classification at level 1. No mandatory parameter.
 
@@ -41,10 +41,10 @@ from data_bridges_client.models.paged_commodity_list_dto import PagedCommodityLi
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -117,13 +117,13 @@ Provide the detailed list of the commodities available in DataBridges platform
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_commodities-list_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_commodities-list\_get"
 
 COICOP 2018 codes are returned to hierarchically matching categories based on [UN-Statistical Division codes](https://unstats.un.org/unsd/classifications/Econ/). No mandatory parameter.
 
@@ -143,10 +143,10 @@ from data_bridges_client.models.paged_commodity_list_dto import PagedCommodityLi
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

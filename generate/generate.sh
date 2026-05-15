@@ -12,7 +12,7 @@ mv generate/README-backup.md README.md
 mv generate/LICENSE.md LICENSE.md
 mv generate/Makefile-backup Makefile
 
-openapi-generator-cli generate -g python -i generate/swagger.json -o . --package-name data_bridges_client --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+openapi-generator-cli generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
 
 uvx migrate-to-uv
 
@@ -21,3 +21,4 @@ uv add --group dev isort black ruff
 
 rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
 
+echo "Done."

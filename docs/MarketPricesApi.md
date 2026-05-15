@@ -1,6 +1,6 @@
 # data_bridges_client.MarketPricesApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,13 +18,13 @@ Returns time series values of ALPS and PEWI.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-alps_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-alps\_get"
 
 Returns the full time series of the Alert for Price Spikes (ALPS) and the value of the Price Early Warning Index (PEWI). Methodology is available in [DataViz](https://dataviz.vam.wfp.org/) and [VAM-Resource Centre](https://resources.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
 
@@ -44,10 +44,10 @@ from data_bridges_client.models.extended_alps_value_dto_paged_result import Exte
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -132,13 +132,13 @@ Returns a daily time series of commodity market prices.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-pricedaily_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-pricedaily\_get"
 
 This is the highest frequency available. Data is flagged according to its pre-processing characteristics.
 Actual data is collected originally with daily frequency; aggregated data returns an empty list; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package;        forecasted data is a six months prediction obtained through different methods, which are reported in the API.  For country specific meta-data please refer to documentation available in DataLibrary. For specific methodological notes on forecasts and imputations refer to the dedicated page in DataViz.  Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
@@ -159,10 +159,10 @@ from data_bridges_client.models.view_extended_monthly_aggregated_price_paged_res
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -247,13 +247,13 @@ Returns a monthly time series of commodity market prices.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-pricemonthly_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-pricemonthly\_get"
 
 This is the lowest frequency available and the most complete data source. Data is flagged according to its pre-processing characteristics. actual data is collected originally with monthly frequency; aggregated data is collected with higher frequency (daily or weekly) averaged through a weighted mean to monthly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
 
@@ -273,10 +273,10 @@ from data_bridges_client.models.view_extended_monthly_aggregated_price_paged_res
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -361,13 +361,13 @@ Returns original commodity market prices
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-priceraw_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-priceraw\_get"
 
 Restricted endpoint. Returns the original data with the entire Commodity Price Metadata as inserted by the focal point, which might contain sensitive or personal informatio. Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
 
@@ -387,10 +387,10 @@ from data_bridges_client.models.paged_commodity_price_list_dto import PagedCommo
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -475,13 +475,13 @@ Returns a weekly time series of commodity market prices.
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_marketprices-priceweekly_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-priceweekly\_get"
 
 Weeks used as reference are the International Organization for Standardization (ISO) week-numbering year (ISO-8601). Data is flagged according to its pre-processing characteristics. Aactual data is collected originally with weekly frequency; aggregated data is collected with higher frequency (daily) averaged through a weighted mean to weekly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
 
@@ -501,10 +501,10 @@ from data_bridges_client.models.paged_commodity_weekly_aggregated_price_list_dto
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

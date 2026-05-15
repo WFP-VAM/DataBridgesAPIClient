@@ -1,6 +1,6 @@
 # data_bridges_client.RpmeApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,13 +19,13 @@ Get data that includes the core RPME fields only by Survey ID
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-basedata_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-basedata\_get"
 
 
 
@@ -45,10 +45,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -118,13 +118,13 @@ Get a full dataset that includes all the fields included in the survey in additi
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-fulldata_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-fulldata\_get"
 
 
 
@@ -144,10 +144,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -219,13 +219,13 @@ Processed values for each variable used in the assessments
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-outputvalues_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-outputvalues\_get"
 
 
 
@@ -245,10 +245,10 @@ from data_bridges_client.models.rpme_assessment_paged_result import RpmeAssessme
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -323,13 +323,13 @@ Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base XLS For
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-surveys_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-surveys\_get"
 
 
 
@@ -349,10 +349,10 @@ from data_bridges_client.models.paged_survey_list_dto import PagedSurveyListDTO
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -423,13 +423,13 @@ List of variables
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-variables_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-variables\_get"
 
 
 
@@ -449,10 +449,10 @@ from data_bridges_client.models.rpme_variable_paged_result import RpmeVariablePa
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -517,13 +517,13 @@ Get a complete list of XLS Forms uploaded on the RPME in a given period of data 
 
 
 
-[![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
 
-[![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
 
-[![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
 
-### This endpoint is restricted, it requires the scope: "vamdatabridges_rpme-xlsforms_get"
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_rpme-xlsforms\_get"
 
 
 
@@ -543,10 +543,10 @@ from data_bridges_client.models.paged_xls_form_list_dto import PagedXlsFormListD
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
