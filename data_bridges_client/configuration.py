@@ -221,7 +221,7 @@ class Configuration:
     ) -> None:
         """Constructor"""
         self._base_path = (
-            "https://gateway.api.wfp.org/vam-data-bridges/v1" if host is None else host
+            "https://gateway.api.wfp.org/vam-data-bridges/v2" if host is None else host
         )
         """Default Base url
         """
@@ -559,7 +559,7 @@ class Configuration:
         """
         return [
             {
-                "url": "https://gateway.api.wfp.org/vam-data-bridges/v1",
+                "url": "https://gateway.api.wfp.org/vam-data-bridges/v2",
                 "description": "No description provided",
             }
         ]

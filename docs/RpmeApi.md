@@ -1,6 +1,6 @@
 # data_bridges_client.RpmeApi
 
-All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -43,12 +43,12 @@ Get data that includes the core RPME fields only by Survey ID
 import data_bridges_client
 from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyResponsesDTO
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -56,7 +56,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
@@ -142,12 +145,12 @@ Get a full dataset that includes all the fields included in the survey in additi
 import data_bridges_client
 from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyResponsesDTO
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -155,7 +158,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
@@ -243,12 +249,12 @@ Processed values for each variable used in the assessments
 import data_bridges_client
 from data_bridges_client.models.rpme_assessment_paged_result import RpmeAssessmentPagedResult
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -256,7 +262,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
@@ -347,12 +356,12 @@ Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base XLS For
 import data_bridges_client
 from data_bridges_client.models.paged_survey_list_dto import PagedSurveyListDTO
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -360,7 +369,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
@@ -447,12 +459,12 @@ List of variables
 import data_bridges_client
 from data_bridges_client.models.rpme_variable_paged_result import RpmeVariablePagedResult
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -460,7 +472,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
@@ -541,12 +556,12 @@ Get a complete list of XLS Forms uploaded on the RPME in a given period of data 
 import data_bridges_client
 from data_bridges_client.models.paged_xls_form_list_dto import PagedXlsFormListDTO
 from data_bridges_client.rest import ApiException
+from data_bridges_client.token import WfpApiToken
 from pprint import pprint
-
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -554,7 +569,10 @@ configuration = data_bridges_client.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+clientId = "" # insert your clientId here 
+clientSecret = "" #insert your clientSecret here
+
+token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
 # Enter a context with an instance of the API client
 with data_bridges_client.ApiClient(configuration) as api_client:
