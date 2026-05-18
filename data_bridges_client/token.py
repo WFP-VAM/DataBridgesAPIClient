@@ -7,7 +7,7 @@ import data_bridges_client
 
 
 class WfpApiToken:
-    BASE_URL = "https://api.wfp.org"
+    BASE_URL = "https://gateway.api.wfp.org"
 
     def __init__(self, api_key: str, api_secret: str):
         """
