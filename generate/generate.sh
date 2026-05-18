@@ -21,4 +21,8 @@ uv add --group dev isort black ruff
 
 rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
 
+uv run isort --settings-path pyproject.toml ./
+uv run black --config pyproject.toml ./
+uv run ruff check . --fix
+
 echo "Done."
