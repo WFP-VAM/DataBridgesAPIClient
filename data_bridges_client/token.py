@@ -1,7 +1,6 @@
 from typing import Optional
 
 import httpx
-import urllib3
 
 import data_bridges_client
 
@@ -11,21 +10,21 @@ class WfpApiToken:
     TOKEN_URL = "https://login.microsoftonline.com/462ad9ae-d7d9-4206-b874-71b1e079776f/oauth2/v2.0/token"
 
     def __init__(self, api_key: str, api_secret: str):
-            """
-            Args:
-                api_key: API key credential to make API requests
-                api_secret: API secrets credential to make API requests
-            """
-            self.api_key = api_key
-            self.api_secret = api_secret
+        """
+        Args:
+            api_key: API key credential to make API requests
+            api_secret: API secrets credential to make API requests
+        """
+        self.api_key = api_key
+        self.api_secret = api_secret
 
-    def refresh(self, scopes: Optional[str] = None):
+    def refresh(self):
         """
         Refreshes token to make API requests
         Args:
             scopes: API scopes. The default is None
         """
-        
+
         resp = httpx.post(
             self.TOKEN_URL,
             headers={"Content-Type": "application/x-www-form-urlencoded"},
@@ -42,18 +41,9 @@ class WfpApiToken:
             print("RESPONSE:", resp.text)
             resp.raise_for_status()
 
-        # resp_data = resp.json()
-        # received_scopes = set(resp_data["scope"].split(" "))
-        # if not set(scopes).issubset(received_scopes):
-        #     raise ValueError(f"Could not acquire requested scopes: {scopes}")
         return resp.json()["access_token"]
 
-
-
-    def refresh_configuration(self):
-        configuration = data_bridges_client.Configuration(
-            host="https://gateway.api.wfp.org/vam-data-bridges/v2"
-        )
+    def refresh_configuration(self,):
+        configuration = data_bridges_client.Configuration()
         configuration.access_token = self.refresh()
         return configuration
-
