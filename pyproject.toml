@@ -2,7 +2,7 @@
 name = "data_bridges_client"
 version = "8.0.0"
 description = "VAMDataBridges"
-authors = [{ name = "VAM-INFO", email = "wfp.economicanalysis@wfp.org" }]
+authors = [{ name = "VAM-INFO", email = "wfp.vaminfo@wfp.org" }]
 requires-python = ">=3.9"
 readme = "README.md"
 keywords = [

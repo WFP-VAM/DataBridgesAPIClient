@@ -7,12 +7,12 @@
 
 Make sure that the npm and its packages are in the PATH. You can also run `./generate/install.sh`
 
-2. Place the latest swagger.json in `./generate/swagger.json`
+2. Place the latest swagger.yaml in `./generate/swagger.yaml`
 
-3. Run `./generate/generate.sh`. This will generate the  generate the client  while preserving some key files (i.e. `token.py`, used for the WFP authentication, and the `README` file, which )
+3. Run `./generate/generate.sh`. This will generate the  generate the client  while preserving some key files (e.g. `token.py`, used for the WFP authentication, `LICENSE` and `README` files)
 
-4. Manually update the README file.
+4. Manually update the README file as required (e.g. to up)
 
-5. Run the test suite.
+5. Run the test suite using `make test`.
 
 6. Commit, push and open a PR for review.

@@ -18,6 +18,7 @@ uvx migrate-to-uv
 
 uv lock --upgrade
 uv add --group dev isort black ruff
+uv add httpx
 
 rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
 
