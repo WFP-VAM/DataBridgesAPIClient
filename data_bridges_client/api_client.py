@@ -30,10 +30,7 @@ from data_bridges_client import rest
 from data_bridges_client.api_response import ApiResponse
 from data_bridges_client.api_response import T as ApiResponseT
 from data_bridges_client.configuration import Configuration
-from data_bridges_client.exceptions import (
-    ApiException,
-    ApiValueError,
-)
+from data_bridges_client.exceptions import ApiException, ApiValueError
 
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
 
@@ -83,7 +80,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = "OpenAPI-Generator/1.0.0/python"
+        self.user_agent = "OpenAPI-Generator/8.0.0/python"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

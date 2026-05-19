@@ -6,6 +6,7 @@ mv LICENSE.md generate/LICENSE.md
 mv Makefile generate/Makefile-backup
 
 rm -rf test docs data_bridges_client
+rm -rf scripts htmlcov data_bridges_client.egg-info   
 rm ./*
 mkdir data_bridges_client
 mv generate/token.py data_bridges_client/
@@ -28,7 +29,7 @@ echo $'\n[tool.setuptools]\npackages = ["data_bridges_client"]\n' >> pyproject.t
 rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
 
 uv run isort --settings-path pyproject.toml ./
-uv run black --config pyproject.toml ./
+uv run black --fast --config pyproject.toml ./ 
 uv run ruff check . --fix
 
 echo "Done."

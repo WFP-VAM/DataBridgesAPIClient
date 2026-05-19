@@ -221,7 +221,7 @@ class Configuration:
     ) -> None:
         """Constructor"""
         self._base_path = (
-            "https://gateway.api.wfp.org/vam-data-bridges/v2" if host is None else host
+            "https://gateway.api.wfp.org/vam-data-bridges/v1" if host is None else host
         )
         """Default Base url
         """
@@ -549,7 +549,7 @@ class Configuration:
             "OS: {env}\n"
             "Python Version: {pyversion}\n"
             "Version of the API: v1\n"
-            "SDK Package Version: 1.0.0".format(env=sys.platform, pyversion=sys.version)
+            "SDK Package Version: 8.0.0".format(env=sys.platform, pyversion=sys.version)
         )
 
     def get_host_settings(self) -> List[HostSetting]:
@@ -559,7 +559,7 @@ class Configuration:
         """
         return [
             {
-                "url": "https://gateway.api.wfp.org/vam-data-bridges/v2",
+                "url": "https://gateway.api.wfp.org/vam-data-bridges/v1",
                 "description": "No description provided",
             }
         ]

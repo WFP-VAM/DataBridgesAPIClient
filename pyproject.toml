@@ -2,7 +2,7 @@
 name = "data_bridges_client"
 version = "8.0.0"
 description = "VAMDataBridges"
-authors = [{ name = "VAM-INFO", email = "wfp.vaminfo@wfp.org" }]
+authors = [{ name = "VAM-INFO", email = "wfp.economicanalysis@wfp.org" }]
 requires-python = ">=3.9"
 readme = "README.md"
 keywords = [
@@ -15,6 +15,7 @@ dependencies = [
     "python-dateutil (>=2.8.2)",
     "pydantic (>=2.11)",
     "typing-extensions (>=4.7.1)",
+    "httpx>=0.28.1",
 ]
 
 [project.urls]
@@ -101,3 +102,4 @@ warn_return_any = true
 
 [tool.setuptools]
 packages = ["data_bridges_client"]
+

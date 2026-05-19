@@ -1,5 +1,3 @@
-from typing import Optional
-
 import httpx
 
 import data_bridges_client
@@ -43,7 +41,9 @@ class WfpApiToken:
 
         return resp.json()["access_token"]
 
-    def refresh_configuration(self,):
+    def refresh_configuration(
+        self,
+    ):
         configuration = data_bridges_client.Configuration()
         configuration.access_token = self.refresh()
         return configuration

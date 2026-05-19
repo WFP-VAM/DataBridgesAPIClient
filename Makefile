@@ -23,7 +23,7 @@ check-codestyle:
 .PHONY: codestyle
 codestyle:
 	uv run isort --settings-path pyproject.toml ./
-	uv run black --config pyproject.toml ./
+	uv run black --fast --config pyproject.toml ./
 	uv run ruff check . --fix
 
 #* Tests

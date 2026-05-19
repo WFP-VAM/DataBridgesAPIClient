@@ -3325,7 +3325,7 @@ paths:
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
 servers:
-- url: https://gateway.api.wfp.org/vam-data-bridges/v2
+- url: https://gateway.api.wfp.org/vam-data-bridges/v1
 x-changelog:
 - changes: First release
   version: 1.0.0
