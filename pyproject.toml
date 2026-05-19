@@ -1,6 +1,6 @@
 [project]
 name = "data_bridges_client"
-version = "8.0.0"
+version = "8.1.0"
 description = "VAMDataBridges"
 authors = [{ name = "VAM-INFO", email = "wfp.economicanalysis@wfp.org" }]
 requires-python = ">=3.9"

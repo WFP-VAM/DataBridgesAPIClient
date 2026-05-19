@@ -10,7 +10,7 @@ rm ./*
 mkdir data_bridges_client
 mv generate/token.py data_bridges_client/
 
-openapi-generator-cli generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --additional-properties=packageVersion=8.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+openapi-generator-cli generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --additional-properties=packageVersion=8.1.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
 mv generate/README-backup.md README.md
 mv generate/LICENSE.md LICENSE.md
 mv generate/Makefile-backup Makefile

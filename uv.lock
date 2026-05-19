@@ -511,7 +511,7 @@ toml = [
 
 [[package]]
 name = "data-bridges-client"
-version = "8.0.0"
+version = "8.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },

@@ -1,6 +1,6 @@
 # data_bridges_client.CurrencyApi
 
-All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -41,10 +41,10 @@ from data_bridges_client.models.paged_currency_list_dto import PagedCurrencyList
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -143,10 +143,10 @@ from data_bridges_client.models.usd_indirect_quotation_paged_result import UsdIn
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters

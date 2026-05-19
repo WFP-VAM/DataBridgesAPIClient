@@ -1,6 +1,6 @@
 # data_bridges_client.IpcchApi
 
-All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,10 +44,10 @@ from data_bridges_client.models.ipcch_peaks_dto_paged_result import IpcchPeaksDt
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -142,10 +142,10 @@ from data_bridges_client.models.ipcch_peaks_dto_paged_result import IpcchPeaksDt
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -238,10 +238,10 @@ from data_bridges_client.models.ipcch_base_dto_paged_result import IpcchBaseDtoP
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -334,10 +334,10 @@ from data_bridges_client.models.ipcch_and_equivalent_peaks_dto_paged_result impo
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -430,10 +430,10 @@ from data_bridges_client.models.ipc_historical_datum_dto_paged_result import Ipc
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters

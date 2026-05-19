@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **phase4_population** | **int** |  | [optional] 
 **phase5_population** | **int** |  | [optional] 
 **phase3_plus_population** | **int** |  | [optional] 
+**reference_year** | **int** |  | [optional] 
 
 ## Example
 
