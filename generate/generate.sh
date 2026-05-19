@@ -6,7 +6,6 @@ mv LICENSE.md generate/LICENSE.md
 mv Makefile generate/Makefile-backup
 
 rm -rf test docs data_bridges_client
-rm -rf scripts htmlcov data_bridges_client.egg-info   
 rm ./*
 mkdir data_bridges_client
 mv generate/token.py data_bridges_client/
