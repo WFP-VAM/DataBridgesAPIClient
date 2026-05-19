@@ -66,11 +66,11 @@ clientSecret = "" #insert your clientSecret here
 
 token = WfpApiToken(api_key=clientId, api_secret=clientSecret)
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 
 configuration = data_bridges_client.Configuration(
-            host="https://gateway.api.wfp.org/vam-data-bridges/v1", access_token=token.refresh()
+            host="https://gateway.api.wfp.org/vam-data-bridges/v2", access_token=token.refresh()
         )
 
 # Enter a context with an instance of the API client
@@ -95,7 +95,7 @@ with data_bridges_client.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
