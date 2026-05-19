@@ -1,30 +1,18 @@
 # Generating a new client 
 
-Every time
-
-
 1. Create a new branch `git checkout -b new_branch_name`
 2. Install openapi-generator
 
 ```npm install @openapitools/openapi-generator-cli -g``
 
-Make sure that the npm and its packages are in the PATH.
+Make sure that the npm and its packages are in the PATH. You can also run `./generate/install.sh`
 
+2. Place the latest swagger.yaml in `./generate/swagger.yaml`
 
-2. Place the latest swagger.json in `./generate/swagger.json`
+3. Run `./generate/generate.sh`. This will generate the  generate the client  while preserving some key files (e.g. `token.py`, used for the WFP authentication, `LICENSE` and `README` files)
 
-3. Remove the current files except the `token.py` file
+4. Manually update the README file as required (e.g. to up)
 
-```
-mv data_bridges_client/token.py .
-rm -rf test docs data_bridges_client
-mkdir data_bridges_client
-mv ./token.py data_bridges_client/
-```
+5. Run the test suite using `make test`.
 
-5. Generate the client by running this command from the root of the repository.
-```
-openapi-generator-cli generate -g python -i generate/swagger.json -o . --package-name data_bridges_client --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
-```
-4. Manually revert changes to `setup.py`, `README.md` and `License.md`. These relate to additional functionality we developed to handle the WFP token refresh workflow.
-5. Commit, push and open a PR into `dev` for review.
+6. Commit, push and open a PR for review.

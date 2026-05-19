@@ -1,6 +1,6 @@
 # data_bridges_client.IpcchApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,23 @@ Method | HTTP request | Description
 
 Retrieves a paginated list of historical IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-historicalpeaks_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_ipcch-ipcchandequivalent-historicalpeaks\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -28,10 +44,10 @@ from data_bridges_client.models.ipcch_peaks_dto_paged_result import IpcchPeaksDt
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -98,7 +114,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of the latest IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-latestpeaks_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_ipcch-ipcchandequivalent-latestpeaks\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -110,10 +142,10 @@ from data_bridges_client.models.ipcch_peaks_dto_paged_result import IpcchPeaksDt
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -178,7 +210,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of the most recent IPCCH and Equivalent data, optionally filtered by ISO3 country code.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalent-mostrecent_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_ipcch-ipcchandequivalent-mostrecent\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -190,10 +238,10 @@ from data_bridges_client.models.ipcch_base_dto_paged_result import IpcchBaseDtoP
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -258,7 +306,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of IPCCH and Equivalent Peaks data for the WFP Dashboard.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcchandequivalentpeakswfpdashboard_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_ipcch-ipcchandequivalentpeakswfpdashboard\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -270,10 +334,10 @@ from data_bridges_client.models.ipcch_and_equivalent_peaks_dto_paged_result impo
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -338,7 +402,23 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of IPCCH and Equivalent Historical Data.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_ipcch-ipcch-historicaldata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_ipcch-ipcch-historicaldata\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -350,10 +430,10 @@ from data_bridges_client.models.ipc_historical_datum_dto_paged_result import Ipc
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -1,6 +1,6 @@
 # data_bridges_client.IncubationApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,25 @@ Method | HTTP request | Description
 
 Retrieves a paginated list of Adm0 CARI results based on the specified indicator, administrative code, and  survey.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_cari-adm0values_get\"  This method returns a paginated list of results based on the provided filters. Ensure              that the parameters are valid and correspond to existing data in the repository. If an error occurs during              processing, a bad request response is returned with the error details.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_cari-adm0values\_get"
+
+This method returns a paginated list of results based on the provided filters. Ensure
+            that the parameters are valid and correspond to existing data in the repository. If an error occurs during
+            processing, a bad request response is returned with the error details.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -32,10 +50,10 @@ from data_bridges_client.models.cari_adm0_values_dto_paged_result import CariAdm
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -104,7 +122,25 @@ Name | Type | Description  | Notes
 
 Retrieves a paginated list of Adm1 CARI results based on the specified indicator, administrative code, and  survey.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_cari-adm1values_get\"  This method returns a paginated list of results based on the provided filters. Ensure              that the parameters are valid and correspond to existing data in the repository. If an error occurs during              processing, a bad request response is returned with the error details.    **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_cari-adm1values\_get"
+
+This method returns a paginated list of results based on the provided filters. Ensure
+            that the parameters are valid and correspond to existing data in the repository. If an error occurs during
+            processing, a bad request response is returned with the error details.
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -116,10 +152,10 @@ from data_bridges_client.models.cari_adm1_values_dto_paged_result import CariAdm
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -188,7 +224,23 @@ Name | Type | Description  | Notes
 
 Get data that includes the core household fields only by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_household-draftinternalbasedata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_household-draftinternalbasedata\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -200,10 +252,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -274,7 +326,23 @@ Name | Type | Description  | Notes
 
 Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_household-fulldata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_household-fulldata\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -286,10 +354,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -362,7 +430,23 @@ Name | Type | Description  | Notes
 
 Get data that includes the core household fields only by Survey ID
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_household-officialusebasedata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_household-officialusebasedata\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -374,10 +458,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -445,7 +529,23 @@ Name | Type | Description  | Notes
 
 Get data that includes the core household fields only by Survey ID
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_household-publicbasedata_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_household-publicbasedata\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -457,10 +557,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -528,7 +628,23 @@ Name | Type | Description  | Notes
 
 Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base XLS Form of all household surveys conducted in a country.   A date of reference, SurveyDate, for the data collection is set by the officer responsible for the upload for each survey.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_household-surveys_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_household-surveys\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -540,10 +656,10 @@ from data_bridges_client.models.household_survey_list_dto_paged_result import Ho
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -614,7 +730,23 @@ Name | Type | Description  | Notes
 
 Please use this endpoint only for large data retrieval - Response will include only JSON format -   Get a MFI processed data in long format; levels indicate the data aggregation level 1) Normalized Score, 2) Trader Aggregate Score,   3) Market Aggregate Score, 4) Trader Median, 5) Trader Mean, 6) Market Mean; each line corresponds to one of the nine dimensions of scores   plus the final MFI aggregate score; 1) Assortment, 2) Availability, 3) Price, 4) Resilience, 5) Competition, 6) Infrastructure, 7) Service,   8) Quality, 9) Access and Protection, and 10) MFI final score; the variable label describes each variable and its value range
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_mfi-surveys-processeddatakeysetpagination_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_mfi-surveys-processeddatakeysetpagination\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -626,10 +758,10 @@ from data_bridges_client.models.paged_processed_data_dto import PagedProcessedDa
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -706,7 +838,23 @@ Name | Type | Description  | Notes
 
 Get a complete set of XLS Form definitions of a given XLS Form ID. This is the digital version of the questionnaire used during the data collection exercise.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_xlsforms-definition_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Incubation-red)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_xlsforms-definition\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -718,10 +866,10 @@ from data_bridges_client.models.xls_form_definition_new_schema_dto import XlsFor
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

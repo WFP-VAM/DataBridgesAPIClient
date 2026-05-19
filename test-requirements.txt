@@ -1,3 +1,0 @@
-# Deprecated compatibility shim.
-# Test dependencies are declared in pyproject.toml under [project.optional-dependencies].
-.[test]

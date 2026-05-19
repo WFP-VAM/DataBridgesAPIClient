@@ -1,6 +1,6 @@
 # data_bridges_client.GlobalOutlookApi
 
-All URIs are relative to *https://api.wfp.org/vam-data-bridges/7.0.0*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,23 @@ Method | HTTP request | Description
 
 Return the latest country dataset of number of acutely food insecure (in thousands)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-countrylatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_globaloutlook-countrylatest\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -26,10 +42,10 @@ from data_bridges_client.models.global_outlook_country_api_dto import GlobalOutl
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -90,7 +106,23 @@ Name | Type | Description  | Notes
 
 Return the latest global dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-globallatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_globaloutlook-globallatest\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -102,10 +134,10 @@ from data_bridges_client.models.global_outlook_api_dto import GlobalOutlookApiDt
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -166,7 +198,23 @@ Name | Type | Description  | Notes
 
 Return the latest regional dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
 
-  [![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)]()  [![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)]()  [![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)]()  ### This endpoint is restricted, it requires the scope: \"vamdatabridges_globaloutlook-regionallatest_get\"      **Data Controller** - Wael ATTIA  **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
+
+
+![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+### This endpoint is restricted, it requires the permission: "vamdatabridges\_globaloutlook-regionallatest\_get"
+
+
+
+
+
+**Data Controller** - Wael ATTIA
+
+**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 
 ### Example
 
@@ -178,10 +226,10 @@ from data_bridges_client.models.global_outlook_regional_api_dto import GlobalOut
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.wfp.org/vam-data-bridges/7.0.0
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://api.wfp.org/vam-data-bridges/7.0.0"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
 )
 
 # The client must configure the authentication and authorization parameters

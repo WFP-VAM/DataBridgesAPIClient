@@ -1,3 +1,35 @@
 #!/bin/bash
-openapi-generator-cli version-manager set 7.8.0
-openapi-generator-cli generate -g python -i generate/swagger.json -o . --package-name data_bridges_client --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+make cleanup
+mv data_bridges_client/token.py generate/
+mv README.md generate/README-backup.md
+mv LICENSE.md generate/LICENSE.md
+mv Makefile generate/Makefile-backup
+
+rm -rf test docs data_bridges_client
+rm -rf scripts htmlcov data_bridges_client.egg-info   
+rm ./*
+mkdir data_bridges_client
+mv generate/token.py data_bridges_client/
+
+openapi-generator-cli generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --additional-properties=packageVersion=8.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+mv generate/README-backup.md README.md
+mv generate/LICENSE.md LICENSE.md
+mv generate/Makefile-backup Makefile
+
+uvx migrate-to-uv
+
+uv lock --upgrade
+uv add --group dev isort black ruff
+uv add httpx
+
+echo '.env' >> .gitignore
+
+echo $'\n[tool.setuptools]\npackages = ["data_bridges_client"]\n' >> pyproject.toml
+
+rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
+
+uv run isort --settings-path pyproject.toml ./
+uv run black --fast --config pyproject.toml ./ 
+uv run ruff check . --fix
+
+echo "Done."

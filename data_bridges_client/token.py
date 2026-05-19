@@ -1,13 +1,11 @@
 import httpx
-import datetime
-from typing import Optional, Any, List, Dict
+
 import data_bridges_client
-import urllib3
-import json
 
 
 class WfpApiToken:
-    BASE_URL = "https://api.wfp.org"
+    BASE_URL = "https://gateway.api.wfp.org"
+    TOKEN_URL = "https://login.microsoftonline.com/462ad9ae-d7d9-4206-b874-71b1e079776f/oauth2/v2.0/token"
 
     def __init__(self, api_key: str, api_secret: str):
         """
@@ -18,48 +16,34 @@ class WfpApiToken:
         self.api_key = api_key
         self.api_secret = api_secret
 
-    def refresh(self, scopes: Optional[str] = None):
+    def refresh(self):
         """
         Refreshes token to make API requests
         Args:
             scopes: API scopes. The default is None
         """
-        if scopes is None:
-            scopes = []
+
         resp = httpx.post(
-            f"{self.BASE_URL}/token",
-            data={"grant_type": "client_credentials", "scope": " ".join(scopes)},
-            auth=(self.api_key, self.api_secret),
+            self.TOKEN_URL,
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
+            data={
+                "grant_type": "client_credentials",
+                "scope": "api://wfp-api-mediation-service/.default",
+                "client_id": self.api_key,
+                "client_secret": self.api_secret,
+            },
         )
-        resp.raise_for_status()
-        resp_data = resp.json()
-        received_scopes = set(resp_data["scope"].split(" "))
-        if not set(scopes).issubset(received_scopes):
-            raise ValueError(f"Could not acquire requested scopes: {scopes}")
-        return resp_data["access_token"]
 
-    def refresh_urllib3(self, scopes: Optional[str] = None):
-        """
-        Refreshes token to make API requests
-        Same function as self.refresh but uses urllib3
-        """
+        if resp.status_code != 200:
+            print("STATUS:", resp.status_code)
+            print("RESPONSE:", resp.text)
+            resp.raise_for_status()
 
-        if scopes is None:
-            scopes = []
-        resp = urllib3.request(
-            "POST",
-            f"{self.BASE_URL}/token",
-            body={"grant_type": "client_credentials", "scope": " ".join(scopes)},
-            headers=urllib3.make_headers(
-                basic_auth=f"{self.api_key}:{self.api_secret}"
-            ),
-        )
-        return resp
+        return resp.json()["access_token"]
 
-    def refresh_configuration(self):
-        """
-        Instantiate new client.Configuration with fresh OAuth2 access token
-        """
+    def refresh_configuration(
+        self,
+    ):
         configuration = data_bridges_client.Configuration()
         configuration.access_token = self.refresh()
         return configuration
