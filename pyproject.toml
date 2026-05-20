@@ -109,3 +109,4 @@ warn_return_any = true
 
 [tool.setuptools.packages.find]
 where = ["data_bridges_client"]  # list of folders that contain the packages (["."] by default)
+include = ["data_bridges_client*"]  # package names should match these glob patterns (["*"] by default)
