@@ -3,7 +3,7 @@ name = "data_bridges_client"
 version = "8.0.0"
 description = "VAMDataBridges"
 authors = [{ name = "VAM-INFO", email = "wfp.economicanalysis@wfp.org" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 readme = "README.md"
 keywords = [
     "OpenAPI",
@@ -32,12 +32,19 @@ dev = [
     "isort>=6.1.0",
     "black>=25.11.0",
     "ruff>=0.15.13",
+    "commitizen>=4.16.2",
 ]
 
 [tool.uv]
 default-groups = "all"
 
 
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "semver"
+version_provider = "uv"
+update_changelog_on_bump = true
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
