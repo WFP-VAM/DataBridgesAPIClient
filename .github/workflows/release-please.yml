@@ -1,0 +1,86 @@
+name: Release Please
+
+# Runs on every push to main. Two-phase release process:
+#
+# Phase 1 — PR creation (every push):
+#   Release Please inspects commits since the last release tag, looking for
+#   Conventional Commits (fix:, feat:, feat!:, etc.). If it finds any, it
+#   creates or updates a "release PR" that bumps pyproject.toml and CHANGELOG.md.
+#   No publish happens here — a human must review and merge the release PR.
+#
+# Phase 2 — Publish (only when the release PR is merged):
+#   Release Please sets release_created=true, which gates the publish job.
+#   Building and uploading to S3 happen in the same workflow run as the tag
+#   creation
+
+on:
+  push:
+    branches:
+      - main
+  # Allows manually triggering the publish job alone (e.g. to recover a failed release)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  AWS_REGION: eu-central-1
+  AWS_ACCOUNT_ID: "485262375119"
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    # Only runs on push to main, not on manual dispatch
+    if: github.event_name == 'push'
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: release-please
+    # Runs when the release PR was just merged, or when triggered manually
+    if: |
+      always() && (
+        (needs.release-please.result == 'success' && needs.release-please.outputs.release_created == 'true') ||
+        github.event_name == 'workflow_dispatch'
+      )
+    permissions:
+      id-token: write   # required for AWS OIDC authentication
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/gh-oidc-role
+          role-session-name: GitHubActions-${{ github.run_id }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload distribution to S3
+        run: |
+          aws s3 sync dist/ s3://wfp-hip-pypi/pypi/data-bridges-knots/ \
+            --exclude "*" --include "*.whl" --include "*.tar.gz"
+
+      - name: Regenerate index.html
+        run: |
+          aws s3 ls s3://wfp-hip-pypi/pypi/data-bridges-knots/ \
+            | awk -f scripts/render-simple-index.awk > index.html
+          aws s3 cp index.html s3://wfp-hip-pypi/pypi/data-bridges-knots/index.html \
+            --content-type "text/html"
