@@ -1,13 +1,13 @@
 # data_bridges_client.IncubationApi
 
-All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v1*
+All URIs are relative to *https://gateway.api.wfp.org/vam-data-bridges/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cari_adm0_values_get**](IncubationApi.md#cari_adm0_values_get) | **GET** /Cari/Adm0Values | Retrieves a paginated list of Adm0 CARI results based on the specified indicator, administrative code, and  survey.
 [**cari_adm1_values_get**](IncubationApi.md#cari_adm1_values_get) | **GET** /Cari/Adm1Values | Retrieves a paginated list of Adm1 CARI results based on the specified indicator, administrative code, and  survey.
 [**household_draft_internal_base_data_get**](IncubationApi.md#household_draft_internal_base_data_get) | **GET** /Household/DraftInternalBaseData | Get data that includes the core household fields only by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \&quot;apiKey\&quot; can be found in the profile section of the DataBridges application.
-[**household_full_data_get**](IncubationApi.md#household_full_data_get) | **GET** /Household/FullData | Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \&quot;apiKey\&quot; can be found in the profile section of the DataBridges application.
+[**household_full_data_get**](IncubationApi.md#household_full_data_get) | **GET** /Household/FullData | Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  Access requires a valid API key associated with your DataBridges account profile.  The key is validated against the ApiKeys table: it must be active, not expired, and not deleted.  Returns 401 Unauthorized if the API key is invalid or expired.  Returns 403 Forbidden if the key is valid but the associated user does not have access to the requested survey.  This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \&quot;apiKey\&quot; can be found in the profile section of the DataBridges application.
 [**household_official_use_base_data_get**](IncubationApi.md#household_official_use_base_data_get) | **GET** /Household/OfficialUseBaseData | Get data that includes the core household fields only by Survey ID
 [**household_public_base_data_get**](IncubationApi.md#household_public_base_data_get) | **GET** /Household/PublicBaseData | Get data that includes the core household fields only by Survey ID
 [**household_surveys_get**](IncubationApi.md#household_surveys_get) | **GET** /Household/Surveys | Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base XLS Form of all household surveys conducted in a country.   A date of reference, SurveyDate, for the data collection is set by the officer responsible for the upload for each survey.
@@ -50,10 +50,10 @@ from data_bridges_client.models.cari_adm0_values_dto_paged_result import CariAdm
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -152,10 +152,10 @@ from data_bridges_client.models.cari_adm1_values_dto_paged_result import CariAdm
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -252,10 +252,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -322,9 +322,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **household_full_data_get**
-> PagedSurveyResponsesDTO household_full_data_get(api_key, survey_id=survey_id, format=format, page=page, page_size=page_size, env=env)
+> PagedSurveyResponsesDTO household_full_data_get(api_key, survey_id=survey_id, full_data=full_data, apply_mapping=apply_mapping, format=format, page=page, page_size=page_size, env=env)
 
-Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
+Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  Access requires a valid API key associated with your DataBridges account profile.  The key is validated against the ApiKeys table: it must be active, not expired, and not deleted.  Returns 401 Unauthorized if the API key is invalid or expired.  Returns 403 Forbidden if the key is valid but the associated user does not have access to the requested survey.  This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
 
 
 
@@ -354,10 +354,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -371,16 +371,18 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with data_bridges_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_bridges_client.IncubationApi(api_client)
-    api_key = 'api_key_example' # str | 
-    survey_id = 56 # int | unique identifier for the collected data, as retrieved from /Surveys API. (optional)
-    format = 'json' # str | Output format: [JSON|CSV] Json is the default value (optional) (default to 'json')
-    page = 1 # int | page number for paged results (optional) (default to 1)
-    page_size = 20 # int | page size for paged results, default value is 20. (optional) (default to 20)
+    api_key = 'api_key_example' # str | API key associated with the user's DataBridges profile, used to authenticate and resolve survey access permissions.
+    survey_id = 56 # int | Unique identifier for the collected data, as retrieved from /Surveys API. (optional)
+    full_data = True # bool | When true, returns all survey fields; when false, returns core fields only. (optional)
+    apply_mapping = True # bool | When true, applies the XLS Form field mapping to the response data. (optional)
+    format = 'json' # str | Output format: [JSON|CSV]. JSON is the default value. (optional) (default to 'json')
+    page = 1 # int | Page number for paged results. (optional) (default to 1)
+    page_size = 20 # int | Page size for paged results, default value is 20. (optional) (default to 20)
     env = 'env_example' # str | Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org (optional)
 
     try:
-        # Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  To access this data, please contact Wael ATTIA for authorization.   This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
-        api_response = api_instance.household_full_data_get(api_key, survey_id=survey_id, format=format, page=page, page_size=page_size, env=env)
+        # Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.  Access requires a valid API key associated with your DataBridges account profile.  The key is validated against the ApiKeys table: it must be active, not expired, and not deleted.  Returns 401 Unauthorized if the API key is invalid or expired.  Returns 403 Forbidden if the key is valid but the associated user does not have access to the requested survey.  This endpoint will send you only data you have access to, based on permissions assigned to your application profile.   The \"apiKey\" can be found in the profile section of the DataBridges application.
+        api_response = api_instance.household_full_data_get(api_key, survey_id=survey_id, full_data=full_data, apply_mapping=apply_mapping, format=format, page=page, page_size=page_size, env=env)
         print("The response of IncubationApi->household_full_data_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,11 +396,13 @@ with data_bridges_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**|  | 
- **survey_id** | **int**| unique identifier for the collected data, as retrieved from /Surveys API. | [optional] 
- **format** | **str**| Output format: [JSON|CSV] Json is the default value | [optional] [default to &#39;json&#39;]
- **page** | **int**| page number for paged results | [optional] [default to 1]
- **page_size** | **int**| page size for paged results, default value is 20. | [optional] [default to 20]
+ **api_key** | **str**| API key associated with the user&#39;s DataBridges profile, used to authenticate and resolve survey access permissions. | 
+ **survey_id** | **int**| Unique identifier for the collected data, as retrieved from /Surveys API. | [optional] 
+ **full_data** | **bool**| When true, returns all survey fields; when false, returns core fields only. | [optional] 
+ **apply_mapping** | **bool**| When true, applies the XLS Form field mapping to the response data. | [optional] 
+ **format** | **str**| Output format: [JSON|CSV]. JSON is the default value. | [optional] [default to &#39;json&#39;]
+ **page** | **int**| Page number for paged results. | [optional] [default to 1]
+ **page_size** | **int**| Page size for paged results, default value is 20. | [optional] [default to 20]
  **env** | **str**| Environment.   * &#x60;prod&#x60; - api.vam.wfp.org   * &#x60;dev&#x60; - dev.api.vam.wfp.org | [optional] 
 
 ### Return type
@@ -458,10 +462,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -557,10 +561,10 @@ from data_bridges_client.models.paged_survey_responses_dto import PagedSurveyRes
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -656,10 +660,10 @@ from data_bridges_client.models.household_survey_list_dto_paged_result import Ho
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -758,10 +762,10 @@ from data_bridges_client.models.paged_processed_data_dto import PagedProcessedDa
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -866,10 +870,10 @@ from data_bridges_client.models.xls_form_definition_new_schema_dto import XlsFor
 from data_bridges_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v1
+# Defining the host is optional and defaults to https://gateway.api.wfp.org/vam-data-bridges/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = data_bridges_client.Configuration(
-    host = "https://gateway.api.wfp.org/vam-data-bridges/v1"
+    host = "https://gateway.api.wfp.org/vam-data-bridges/v2"
 )
 
 # The client must configure the authentication and authorization parameters

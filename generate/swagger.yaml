@@ -1,11 +1,17 @@
 openapi: 3.0.0
 info:
   title: "VAMDataBridges"
-  version: "v1"
+  version: "v2"
   contact:
     name: VAM-INFO
     email: wfp.economicanalysis@wfp.org
-  description: 'API Documentation of the **DataBridges** platform: https://databridges.vam.wfp.org/. For API discussions and details: #api-integration-vam-data-bridges on Slack, [Teams channel](https://teams.microsoft.com/l/team/19%3a4ca595f7681f4ffa8a86b7af58832e8d%40thread.skype/conversations?groupId=cbd1e508-c6e8-459d-96b7-6cac3039c42c&tenantId=462ad9ae-d7d9-4206-b874-71b1e079776f) **API Integration** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern'
+  description: >-
+    API Documentation of the **DataBridges** platform:
+    https://databridges.vam.wfp.org/. For API discussions and details:
+    #api-integration-vam-data-bridges on Slack, [Teams
+    channel](https://teams.microsoft.com/l/team/19%3a4ca595f7681f4ffa8a86b7af58832e8d%40thread.skype/conversations?groupId=cbd1e508-c6e8-459d-96b7-6cac3039c42c&tenantId=462ad9ae-d7d9-4206-b874-71b1e079776f)
+    **API Integration** - This endpoint uses [Hey
+    Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
 paths:
   /Cari/Adm0Values:
     get:
@@ -147,12 +153,39 @@ paths:
     get:
       tags:
       - Commodities
-      summary: Provide the detailed list of the commodities available in DataBridges platform
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_commodities-list\\_get\"\n\nCOICOP 2018 codes are returned to hierarchically matching categories based on [UN-Statistical Division codes](https://unstats.un.org/unsd/classifications/Econ/). No mandatory parameter.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      summary: >-
+        Provide the detailed list of the commodities available in DataBridges
+        platform
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_commodities-list\_get"
+
+
+        COICOP 2018 codes are returned to hierarchically matching categories based on [UN-Statistical Division codes](https://unstats.un.org/unsd/classifications/Econ/). No mandatory parameter.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code
         schema:
           type: string
       - name: commodityName
@@ -221,16 +254,43 @@ paths:
       tags:
       - Commodities
       summary: Provides the list of categories.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_commodities-categories-list\\_get\"\n\nCategories are matched with high level WFP commodity classification at level 1. No mandatory parameter.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_commodities-categories-list\_get"
+
+
+        Categories are matched with high level WFP commodity classification at level 1. No mandatory parameter.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code
         schema:
           type: string
       - name: categoryName
         in: query
-        description: The name, even partial and case insensitive, of a commodity category.
+        description: >-
+          The name, even partial and case insensitive, of a commodity
+          category.
         schema:
           type: string
       - name: categoryID
@@ -293,11 +353,15 @@ paths:
     get:
       tags:
       - CommodityUnits
-      summary: Provides the detailed list of the unit of measure available in DataBridges platform
+      summary: >-
+        Provides the detailed list of the unit of measure available in
+        DataBridges platform
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code
         schema:
           type: string
       - name: commodityUnitName
@@ -366,12 +430,39 @@ paths:
     get:
       tags:
       - CommodityUnits
-      summary: Provides conversion factors to Kilogram or Litres for each convertible unit of measure.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_commodityunits-conversion-list\\_get\"\n\nSome non-standard units of measure might have different a conversion factor based on the country [Adm0Code]; Other non-standard units of measure might have a different conversion factor based on the commodity [CommodityID] being measured. Other cases will have null adm0code and CommodityID. No mandatory parameter.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      summary: >-
+        Provides conversion factors to Kilogram or Litres for each convertible
+        unit of measure.
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_commodityunits-conversion-list\_get"
+
+
+        Some non-standard units of measure might have different a conversion factor based on the country [Adm0Code]; Other non-standard units of measure might have a different conversion factor based on the commodity [CommodityID] being measured. Other cases will have null adm0code and CommodityID. No mandatory parameter.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: commodityID
@@ -383,14 +474,18 @@ paths:
           default: 0
       - name: fromUnitID
         in: query
-        description: The exact ID of the original unit of measure of the price of a commodity, as found in /CommodityUnits/List
+        description: >-
+          The exact ID of the original unit of measure of the price of a
+          commodity, as found in /CommodityUnits/List
         schema:
           type: integer
           format: int32
           default: 0
       - name: toUnitID
         in: query
-        description: The exact ID of the converted unit of measure of the price of a commodity, as found in /CommodityUnits/List
+        description: >-
+          The exact ID of the converted unit of measure of the price of a
+          commodity, as found in /CommodityUnits/List
         schema:
           type: integer
           format: int32
@@ -448,11 +543,15 @@ paths:
     get:
       tags:
       - Currency
-      summary: Returns the list of currencies available in the internal VAM database, with Currency 3-letter code, matching with ISO 4217.
+      summary: >-
+        Returns the list of currencies available in the internal VAM database,
+        with Currency 3-letter code, matching with ISO 4217.
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: currencyName
@@ -521,8 +620,33 @@ paths:
     get:
       tags:
       - Currency
-      summary: Returns the value of the Exchange rates from Trading Economics, for official rates, and DataViz for unofficial rates.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_currency-usdindirectquotation\\_get\"\n\nReturns the time series of values of the Exchange rate of the Local Currency for buying 1 USD in the official market. Original frequency for official rates is daily, non-indicated. Unofficial rates are aggregated at national level by the original frequency of collection. For greater detail on unofficial exchange rates, explore the Exchange Rate (unofficial) commodity in Market Prices Prices. No mandatory parameter.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      summary: >-
+        Returns the value of the Exchange rates from Trading Economics, for
+        official rates, and DataViz for unofficial rates.
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_currency-usdindirectquotation\_get"
+
+
+        Returns the time series of values of the Exchange rate of the Local Currency for buying 1 USD in the official market. Original frequency for official rates is daily, non-indicated. Unofficial rates are aggregated at national level by the original frequency of collection. For greater detail on unofficial exchange rates, explore the Exchange Rate (unofficial) commodity in Market Prices Prices. No mandatory parameter.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryIso3
         in: query
@@ -590,7 +714,30 @@ paths:
       tags:
       - EconomicData
       summary: Returns the time series of values for different indicators.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_economicdata\\_get\"\n\nIndicator name as retrieved from /EconomicData/IndicatorList is mandatory.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_economicdata\_get"
+
+
+        Indicator name as retrieved from /EconomicData/IndicatorList is mandatory.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: indicatorName
         in: path
@@ -613,13 +760,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -682,7 +835,30 @@ paths:
       tags:
       - EconomicData
       summary: Returns the lists of indicators.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_economicdata-indicatorlist\\_get\"\n\nReturns the lists of indicators for which Vulnerability Analysis and Mapping - Economic and Market Analysis Unit has redistribution licensing from Trading Economics. No mandatory parameter.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_economicdata-indicatorlist\_get"
+
+
+        Returns the lists of indicators for which Vulnerability Analysis and Mapping - Economic and Market Analysis Unit has redistribution licensing from Trading Economics. No mandatory parameter.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: page
         in: query
@@ -749,7 +925,9 @@ paths:
     get:
       tags:
       - GlobalOutlook
-      summary: Return the latest country dataset of number of acutely food insecure (in thousands)  based on WFP's Global Outlook.
+      summary: >-
+        Return the latest country dataset of number of acutely food insecure (in
+        thousands)  based on WFP's Global Outlook.
       responses:
         '200':
           description: OK
@@ -798,7 +976,9 @@ paths:
     get:
       tags:
       - GlobalOutlook
-      summary: Return the latest regional dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
+      summary: >-
+        Return the latest regional dataset of number of acutely food insecure
+        (in millions)  based on WFP's Global Outlook.
       responses:
         '200':
           description: OK
@@ -847,7 +1027,9 @@ paths:
     get:
       tags:
       - GlobalOutlook
-      summary: Return the latest global dataset of number of acutely food insecure (in millions)  based on WFP's Global Outlook.
+      summary: >-
+        Return the latest global dataset of number of acutely food insecure (in
+        millions)  based on WFP's Global Outlook.
       responses:
         '200':
           description: OK
@@ -894,7 +1076,9 @@ paths:
       parameters:
       - name: adm0Code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -908,13 +1092,19 @@ paths:
           default: 1
       - name: startDate
         in: query
-        description: starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year "-"
+          month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year "-" month
+          "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -952,35 +1142,52 @@ paths:
     get:
       tags:
       - Incubation
-      summary: "Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.\r\nTo access this data, please contact Wael ATTIA for authorization. \r\nThis endpoint will send you only data you have access to, based on permissions assigned to your application profile. \r\nThe \"apiKey\" can be found in the profile section of the DataBridges application."
+      summary: "Get a full dataset that includes all the fields included in the survey in addition to the core household fields by Survey ID.\r\nAccess requires a valid API key associated with your DataBridges account profile.\r\nThe key is validated against the ApiKeys table: it must be active, not expired, and not deleted.\r\nReturns 401 Unauthorized if the API key is invalid or expired.\r\nReturns 403 Forbidden if the key is valid but the associated user does not have access to the requested survey.\r\nThis endpoint will send you only data you have access to, based on permissions assigned to your application profile. \r\nThe \"apiKey\" can be found in the profile section of the DataBridges application."
       parameters:
       - name: apiKey
         in: query
+        description: >-
+          API key associated with the user's DataBridges profile, used to
+          authenticate and resolve survey access permissions.
         required: true
         schema:
           type: string
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          Unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
+      - name: fullData
+        in: query
+        description: >-
+          When true, returns all survey fields; when false, returns core
+          fields only.
+        schema:
+          type: boolean
+      - name: applyMapping
+        in: query
+        description: When true, applies the XLS Form field mapping to the response data.
+        schema:
+          type: boolean
       - name: format
         in: query
-        description: 'Output format: [JSON|CSV] Json is the default value'
+        description: 'Output format: [JSON|CSV]. JSON is the default value.'
         schema:
           type: string
           default: json
       - name: page
         in: query
-        description: page number for paged results
+        description: Page number for paged results.
         schema:
           type: integer
           format: int32
           default: 1
       - name: pageSize
         in: query
-        description: page size for paged results, default value is 20.
+        description: Page size for paged results, default value is 20.
         schema:
           type: integer
           format: int32
@@ -1059,7 +1266,9 @@ paths:
           type: string
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -1146,7 +1355,9 @@ paths:
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -1221,7 +1432,9 @@ paths:
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -1385,7 +1598,9 @@ paths:
     get:
       tags:
       - Ipcch
-      summary: Retrieves a paginated list of IPCCH and Equivalent Peaks data for the WFP Dashboard.
+      summary: >-
+        Retrieves a paginated list of IPCCH and Equivalent Peaks data for the
+        WFP Dashboard.
       parameters:
       - name: iso3
         in: query
@@ -1507,7 +1722,9 @@ paths:
     get:
       tags:
       - Ipcch
-      summary: Retrieves a paginated list of the most recent IPCCH and Equivalent data, optionally filtered by ISO3 country code.
+      summary: >-
+        Retrieves a paginated list of the most recent IPCCH and Equivalent data,
+        optionally filtered by ISO3 country code.
       parameters:
       - name: iso3
         in: query
@@ -1562,7 +1779,9 @@ paths:
     get:
       tags:
       - Ipcch
-      summary: Retrieves a paginated list of the latest IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
+      summary: >-
+        Retrieves a paginated list of the latest IPCCH and Equivalent peaks
+        data, optionally filtered by ISO3 country code.
       parameters:
       - name: iso3
         in: query
@@ -1617,7 +1836,9 @@ paths:
     get:
       tags:
       - Ipcch
-      summary: Retrieves a paginated list of historical IPCCH and Equivalent peaks data, optionally filtered by ISO3 country code.
+      summary: >-
+        Retrieves a paginated list of historical IPCCH and Equivalent peaks
+        data, optionally filtered by ISO3 country code.
       parameters:
       - name: referenceYear
         in: query
@@ -1679,11 +1900,36 @@ paths:
       tags:
       - MarketPrices
       summary: Returns a monthly time series of commodity market prices.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_marketprices-pricemonthly\\_get\"\n\nThis is the lowest frequency available and the most complete data source. Data is flagged according to its pre-processing characteristics. actual data is collected originally with monthly frequency; aggregated data is collected with higher frequency (daily or weekly) averaged through a weighted mean to monthly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-pricemonthly\_get"
+
+
+        This is the lowest frequency available and the most complete data source. Data is flagged according to its pre-processing characteristics. actual data is collected originally with monthly frequency; aggregated data is collected with higher frequency (daily or weekly) averaged through a weighted mean to monthly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: marketID
@@ -1721,13 +1967,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -1765,13 +2017,16 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
             application/json:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
             text/json:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
         '400':
           description: Bad Request
           content:
@@ -1791,11 +2046,36 @@ paths:
       tags:
       - MarketPrices
       summary: Returns a weekly time series of commodity market prices.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_marketprices-priceweekly\\_get\"\n\nWeeks used as reference are the International Organization for Standardization (ISO) week-numbering year (ISO-8601). Data is flagged according to its pre-processing characteristics. Aactual data is collected originally with weekly frequency; aggregated data is collected with higher frequency (daily) averaged through a weighted mean to weekly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-priceweekly\_get"
+
+
+        Weeks used as reference are the International Organization for Standardization (ISO) week-numbering year (ISO-8601). Data is flagged according to its pre-processing characteristics. Aactual data is collected originally with weekly frequency; aggregated data is collected with higher frequency (daily) averaged through a weighted mean to weekly; imputed data is an estimation of missing values in the time series, obtained through the R Amelia-II package; forecasted data is a six months prediction obtained through different methods, which are reported in the API. For country specific meta-data please refer to documentation available in [DataLibrary](https://datalib.vam.wfp.org/). For specific methodological notes on forecasts and imputations refer to the dedicated page in [DataViz](https://dataviz.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: marketID
@@ -1833,13 +2113,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -1877,13 +2163,16 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO'
+                $ref: >-
+                  #/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO
             application/json:
               schema:
-                $ref: '#/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO'
+                $ref: >-
+                  #/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO
             text/json:
               schema:
-                $ref: '#/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO'
+                $ref: >-
+                  #/components/schemas/PagedCommodityWeeklyAggregatedPriceListDTO
         '400':
           description: Bad Request
           content:
@@ -1907,7 +2196,9 @@ paths:
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: marketID
@@ -1945,13 +2236,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -1989,13 +2286,16 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
             application/json:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
             text/json:
               schema:
-                $ref: '#/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult'
+                $ref: >-
+                  #/components/schemas/ViewExtendedMonthlyAggregatedPricePagedResult
         '400':
           description: Bad Request
           content:
@@ -2015,11 +2315,36 @@ paths:
       tags:
       - MarketPrices
       summary: Returns original commodity market prices
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_marketprices-priceraw\\_get\"\n\nRestricted endpoint. Returns the original data with the entire Commodity Price Metadata as inserted by the focal point, which might contain sensitive or personal informatio. Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access%20Policy-TEC_Architecture_+_Service_Owner_approvals_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Official%20Use%20Only-yellow)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-priceraw\_get"
+
+
+        Restricted endpoint. Returns the original data with the entire Commodity Price Metadata as inserted by the focal point, which might contain sensitive or personal informatio. Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: marketID
@@ -2057,13 +2382,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -2127,11 +2458,36 @@ paths:
       tags:
       - MarketPrices
       summary: Returns time series values of ALPS and PEWI.
-      description: "\n\n![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)\n\n![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)\n\n![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)\n\n### This endpoint is restricted, it requires the permission: \"vamdatabridges\\_marketprices-alps\\_get\"\n\nReturns the full time series of the Alert for Price Spikes (ALPS) and the value of the Price Early Warning Index (PEWI). Methodology is available in [DataViz](https://dataviz.vam.wfp.org/) and [VAM-Resource Centre](https://resources.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.\n\n\n\n**Data Controller** - Wael ATTIA\n\n**API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern"
+      description: >2-
+
+
+        ![Generic badge](https://img.shields.io/badge/Maturity%20Level-Production%20Ready-green)
+
+
+        ![Generic badge](https://img.shields.io/badge/Access_Policy-TEC_Architecture_approval_required-yellow)
+
+
+        ![Generic badge](https://img.shields.io/badge/Data%20Classification-Public-green)
+
+
+        ### This endpoint is restricted, it requires the permission: "vamdatabridges\_marketprices-alps\_get"
+
+
+        Returns the full time series of the Alert for Price Spikes (ALPS) and the value of the Price Early Warning Index (PEWI). Methodology is available in [DataViz](https://dataviz.vam.wfp.org/) and [VAM-Resource Centre](https://resources.vam.wfp.org/). Country code, either ISO-3166 Alpha 3 code or the VAM internal admin0code is mandatory.
+
+
+
+
+        **Data Controller** - Wael ATTIA
+
+
+        **API Integration Pattern** - This endpoint uses [Hey Jude](https://docs.api.wfp.org/providers/#api-patterns) pattern
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code.
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code.
         schema:
           type: string
       - name: marketID
@@ -2169,13 +2525,19 @@ paths:
           default: ''
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year \"-\"
+          month \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year \"-\" month \"-\" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year \"-\" month
+          \"-\" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -2275,23 +2637,33 @@ paths:
     get:
       tags:
       - Markets
-      summary: Find markets near a given location by longitude and latitude within a 15Km distance
+      summary: >-
+        Find markets near a given location by longitude and latitude within a
+        15Km distance
       parameters:
       - name: adm0code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
       - name: lat
         in: query
-        description: latitude of the point that will be used to search for existing nearby markets. Geo-reference standard used for this coordinate is decimal
+        description: >-
+          latitude of the point that will be used to search for existing
+          nearby markets. Geo-reference standard used for this coordinate is
+          decimal
         schema:
           type: number
           format: double
       - name: lng
         in: query
-        description: longitude of the point that will be used to search for existing nearby markets.  Geo-reference standard used for this coordinate is decimal
+        description: >-
+          longitude of the point that will be used to search for existing
+          nearby markets.  Geo-reference standard used for this coordinate is
+          decimal
         schema:
           type: number
           format: double
@@ -2336,7 +2708,9 @@ paths:
           format: int32
       - name: localNames
         in: query
-        description: If true the name of markets and regions will be localized if available
+        description: >-
+          If true the name of markets and regions will be localized if
+          available
         schema:
           type: boolean
           default: false
@@ -2376,7 +2750,9 @@ paths:
       parameters:
       - name: countryCode
         in: query
-        description: The code to identify the country. It can be a ISO-3166 Alpha 3 code or the VAM internal admin0code
+        description: >-
+          The code to identify the country. It can be a ISO-3166 Alpha 3 code
+          or the VAM internal admin0code
         schema:
           type: string
       - name: page
@@ -2482,7 +2858,9 @@ paths:
           default: 1
       - name: adm0Code
         in: query
-        description: Code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          Code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -2551,11 +2929,17 @@ paths:
     get:
       tags:
       - Rpme
-      summary: Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base XLS Form of all RPME surveys conducted in a country. The date of reference, SurveyDate, for the data collection is set by the officer responsible for the upload of each survey.
+      summary: >-
+        Retrieve 1) Survey IDs, 2) their corresponding XLS Form IDs, and 3) Base
+        XLS Form of all RPME surveys conducted in a country. The date of
+        reference, SurveyDate, for the data collection is set by the officer
+        responsible for the upload of each survey.
       parameters:
       - name: adm0Code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -2569,13 +2953,19 @@ paths:
           default: 1
       - name: startDate
         in: query
-        description: starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year "-"
+          month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year "-" month
+          "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -2620,11 +3010,16 @@ paths:
     get:
       tags:
       - Rpme
-      summary: Get a complete list of XLS Forms uploaded on the RPME in a given period of data collection. This is the digital version of the questionnaire used during the data collection exercise.
+      summary: >-
+        Get a complete list of XLS Forms uploaded on the RPME in a given period
+        of data collection. This is the digital version of the questionnaire
+        used during the data collection exercise.
       parameters:
       - name: adm0Code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -2638,13 +3033,19 @@ paths:
           default: 1
       - name: startDate
         in: query
-        description: starting date for the range in which data using this XLSForm was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          starting date for the range in which data using this XLSForm was
+          collected. Use the date formats defined by RFC 3339 ; use strings
+          matching year "-" month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: ending date for the range in which data using this XLSForm was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          ending date for the range in which data using this XLSForm was
+          collected. Use the date formats defined by RFC 3339 ; use strings
+          matching year "-" month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -2677,11 +3078,15 @@ paths:
     get:
       tags:
       - Rpme
-      summary: Get a full dataset that includes all the fields included in the survey in addition to the core RPME fields by Survey ID.
+      summary: >-
+        Get a full dataset that includes all the fields included in the survey
+        in addition to the core RPME fields by Survey ID.
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -2762,7 +3167,9 @@ paths:
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -2837,7 +3244,9 @@ paths:
       parameters:
       - name: adm0Code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -2851,13 +3260,19 @@ paths:
           default: 1
       - name: startDate
         in: query
-        description: starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year "-"
+          month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year "-" month
+          "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -2919,19 +3334,27 @@ paths:
           default: json
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year "-"
+          month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year "-" month
+          "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: adm0Codes
         in: query
-        description: Code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          Code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: string
       - name: marketID
@@ -3009,19 +3432,27 @@ paths:
           default: 1000
       - name: startDate
         in: query
-        description: Starting date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          Starting date for the range in which data was collected. Use the
+          date formats defined by RFC 3339 ; use strings matching year "-"
+          month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: Ending date for the range in which data was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          Ending date for the range in which data was collected. Use the date
+          formats defined by RFC 3339 ; use strings matching year "-" month
+          "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: adm0Codes
         in: query
-        description: Code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          Code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: string
       - name: marketID
@@ -3076,11 +3507,17 @@ paths:
     get:
       tags:
       - Surveys
-      summary: Get a full dataset that includes all the fields included in the survey in addition to the core Market Functionality Index (MFI) fields by Survey ID. To access this data, please contact global.mfi@wfp.org for authorization.
+      summary: >-
+        Get a full dataset that includes all the fields included in the survey
+        in addition to the core Market Functionality Index (MFI) fields by
+        Survey ID. To access this data, please contact global.mfi@wfp.org for
+        authorization.
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -3157,11 +3594,15 @@ paths:
     get:
       tags:
       - Surveys
-      summary: Get data that includes the core Market Functionality Index (MFI) fields only by Survey ID
+      summary: >-
+        Get data that includes the core Market Functionality Index (MFI) fields
+        only by Survey ID
       parameters:
       - name: surveyID
         in: query
-        description: unique identifier for the collected data, as retrieved from /Surveys API.
+        description: >-
+          unique identifier for the collected data, as retrieved from /Surveys
+          API.
         schema:
           type: integer
           format: int32
@@ -3232,11 +3673,16 @@ paths:
     get:
       tags:
       - XlsForms
-      summary: Get a complete list of XLS Forms uploaded on the MFI Data Bridge in a given period of data collection. This is the digital version of the questionnaire used during the data collection exercise.
+      summary: >-
+        Get a complete list of XLS Forms uploaded on the MFI Data Bridge in a
+        given period of data collection. This is the digital version of the
+        questionnaire used during the data collection exercise.
       parameters:
       - name: adm0Code
         in: query
-        description: code for the country as retrieved from https://api.vam.wfp.org/geodata/CountriesInRegion
+        description: >-
+          code for the country as retrieved from
+          https://api.vam.wfp.org/geodata/CountriesInRegion
         schema:
           type: integer
           format: int32
@@ -3250,13 +3696,19 @@ paths:
           default: 1
       - name: startDate
         in: query
-        description: starting date for the range in which data using this XLSForm was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          starting date for the range in which data using this XLSForm was
+          collected. Use the date formats defined by RFC 3339 ; use strings
+          matching year "-" month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
       - name: endDate
         in: query
-        description: ending date for the range in which data using this XLSForm was collected. Use the date formats defined by RFC 3339 ; use strings matching year "-" month "-" day (e.g. 2020/06/24)
+        description: >-
+          ending date for the range in which data using this XLSForm was
+          collected. Use the date formats defined by RFC 3339 ; use strings
+          matching year "-" month "-" day (e.g. 2020/06/24)
         schema:
           type: string
           format: date-time
@@ -3289,7 +3741,10 @@ paths:
     get:
       tags:
       - Incubation
-      summary: Get a complete set of XLS Form definitions of a given XLS Form ID. This is the digital version of the questionnaire used during the data collection exercise.
+      summary: >-
+        Get a complete set of XLS Form definitions of a given XLS Form ID. This
+        is the digital version of the questionnaire used during the data
+        collection exercise.
       parameters:
       - name: xlsFormId
         in: query
@@ -3325,7 +3780,7 @@ paths:
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
 servers:
-- url: https://gateway.api.wfp.org/vam-data-bridges/v1
+- url: https://gateway.api.wfp.org/vam-data-bridges/v2
 x-changelog:
 - changes: First release
   version: 1.0.0
@@ -3357,8 +3812,10 @@ x-changelog:
   version: 6.0.0
 - changes: "\n*This version is not backward-compatible with previous versions.*\n*What's New*:\n- GET /Cari/Adm0Values\n- GET /Cari/Adm1Values\n- GET /GlobalOutlook/CountryLatest\n- GET /GlobalOutlook/RegionalLatest\n- GET /GlobalOutlook/GlobalLatest\n- GET /HungerHotspot/CategoriesAndIndicators\n- GET /HungerHotspot/Data\n- GET /Ipcch/IPCCHAndEquivalentPeaks-WFPDashboard\n- GET /Ipcch/IPCCH-HistoricalData\n- GET /Ipcch/IPCCHAndEquivalent-MostRecent\n- GET /Ipcch/IPCCHAndEquivalent-LatestPeaks\n- GET /Ipcch/IPCCHAndEquivalent-HistoricalPeaks\n*What's Deleted*:\n- GET /Aims/DownloadAllAnalysisRounds\n- GET /Aims/DownloadPolygonFiles\n- GET /FoodSecurity/List\n- GET /Gorp/CountryLatest\n- GET /Gorp/GlobalLatest\n- GET /Gorp/RegionalLatest\n*What's Changed*:\n- Changed response schema in GET /MarketPrices/Alps \n- Changed response schema in GET /MarketPrices/PriceDaily \n- Changed response schema in GET /MarketPrices/PriceMonthly \n- Changed response schema in GET /MarketPrices/PriceWeekly \n"
   version: 7.0.0
+- changes: "\n*What's Changed*:\n- Added _fullData_ query parameter and added _applyMapping_ query parameter to GET /Household/FullData \n- Changed response schema in GET /Ipcch/IPCCHAndEquivalentPeaks-WFPDashboard \n- Minor changes to summaries\n"
+  version: 8.0.0
 - changes: "<NEW_API_CHANGELOG>"
-  version: "v1"
+  version: "v2"
 components:
   parameters: {}
   schemas:
@@ -3925,7 +4382,9 @@ components:
           nullable: true
         surveyCreateDate:
           type: string
-          description: The date when the survey has been uploaded in the Data Bridges platform
+          description: >-
+            The date when the survey has been uploaded in the Data Bridges
+            platform
           format: date-time
         surveyValidationReport:
           type: string
@@ -4314,6 +4773,10 @@ components:
           type: integer
           format: int32
           nullable: true
+        referenceYear:
+          type: integer
+          format: int32
+          nullable: true
       additionalProperties: {}
     IpcchAndEquivalentPeaksDTOPagedResult:
       type: object
@@ -4687,20 +5150,28 @@ components:
           nullable: true
         admin1Name:
           type: string
-          description: The name of the first level administrative division where the market is placed
+          description: >-
+            The name of the first level administrative division where the market
+            is placed
           nullable: true
         admin1Code:
           type: integer
-          description: The code of the first level administrative division where the market is placed
+          description: >-
+            The code of the first level administrative division where the market
+            is placed
           format: int32
           nullable: true
         admin2Name:
           type: string
-          description: The name of the second level administrative division where the market is placed
+          description: >-
+            The name of the second level administrative division where the
+            market is placed
           nullable: true
         admin2Code:
           type: integer
-          description: The code of the second level administrative division where the market is placed
+          description: >-
+            The code of the second level administrative division where the
+            market is placed
           format: int32
           nullable: true
       additionalProperties: {}
@@ -5116,7 +5587,9 @@ components:
           nullable: true
         surveyCreateDate:
           type: string
-          description: The date when the survey has been uploaded in the Data Bridges platform
+          description: >-
+            The date when the survey has been uploaded in the Data Bridges
+            platform
           format: date-time
         surveyValidationReport:
           type: string
@@ -5180,7 +5653,10 @@ components:
           nullable: true
         isOfficial:
           type: boolean
-          description: The field IsOfficial is a boolean which can be set to true for the Trading Economics data and to false for the data coming from a commodity saved in the DataBridges database
+          description: >-
+            The field IsOfficial is a boolean which can be set to true for the
+            Trading Economics data and to false for the data coming from a
+            commodity saved in the DataBridges database
         frequency:
           type: string
           description: (it’s from the reporting commodity named Exchange Rate
@@ -5486,7 +5962,9 @@ tags:
 - name: Commodities
   description: Returns the list of commodities and their categories.
 - name: CommodityUnits
-  description: Returns the list of unit of measures and their conversion factors to standard quantities.
+  description: >-
+    Returns the list of unit of measures and their conversion factors to
+    standard quantities.
 - name: Currency
   description: Returns official and, where available, unofficial exchange rates.
 - name: EconomicData
@@ -5502,7 +5980,9 @@ tags:
 - name: MarketPrices
   description: Returns time series of commodity market prices at different frequencies.
 - name: Markets
-  description: Returns the list of market locations with Administrative level codes matching with the VAM internal API.
+  description: >-
+    Returns the list of market locations with Administrative level codes
+    matching with the VAM internal API.
 - name: Rpme
   description: Retail Performance Monitoring and Evaluation
 - name: Surveys
