@@ -3,7 +3,7 @@
 1. Create a new branch `git checkout -b new_branch_name`
 2. Install openapi-generator
 
-```npm install @openapitools/openapi-generator-cli -g``
+```npm install @openapitools/openapi-generator-cli -g```
 
 Make sure that the npm and its packages are in the PATH. You can also run `./generate/install.sh`
 
@@ -15,4 +15,4 @@ Make sure that the npm and its packages are in the PATH. You can also run `./gen
 
 5. Run the test suite using `make test`.
 
-6. Commit, push and open a PR for review.
+6. Commit, push and open a PR for review
