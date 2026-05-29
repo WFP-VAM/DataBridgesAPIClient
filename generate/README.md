@@ -15,4 +15,4 @@ Make sure that the npm and its packages are in the PATH. You can also run `./gen
 
 5. Run the test suite using `make test`.
 
-6. Commit, push and open a PR for review.
+6. Commit, push and open a PR for review
