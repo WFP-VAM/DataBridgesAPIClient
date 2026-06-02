@@ -15,7 +15,7 @@
   ],
   "packages": {
     ".": {
-      "package-name": "data-bridges-knots"
+      "package-name": "data-bridges-client"
     }
   }
 }
