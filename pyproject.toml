@@ -103,3 +103,7 @@ warn_return_any = true
 [tool.setuptools]
 packages = ["data_bridges_client"]
 
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+
