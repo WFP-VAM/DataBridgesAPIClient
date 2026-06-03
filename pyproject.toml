@@ -48,8 +48,8 @@ extension-pkg-whitelist = "pydantic"
 [tool.mypy]
 files = [
   "data_bridges_client",
-  #"test",  # auto-generated tests
-  "tests", # hand-written tests
+  "test",  # auto-generated tests
+  # "tests", # hand-written tests
 ]
 # TODO: enable "strict" once all these individual checks are passing
 # strict = true
@@ -106,9 +106,4 @@ packages = ["data_bridges_client"]
 [[tool.uv.index]]
 name = "pypi"
 url = "https://pypi.org/simple"
-
-[[tool.uv.index]]
-name = "wfp-hip-pypi"
-url = "https://d2i4vvypvg40rv.cloudfront.net/pypi/"
-# explicit = true
 
