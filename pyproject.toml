@@ -107,3 +107,7 @@ packages = ["data_bridges_client"]
 name = "pypi"
 url = "https://pypi.org/simple"
 
+[[tool.uv.index]]
+name = "wfp-hip-pypi"
+url = "https://d2i4vvypvg40rv.cloudfront.net/pypi/"
+
