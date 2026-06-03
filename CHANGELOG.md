@@ -1,5 +1,13 @@
 # Changelog
 
+## [9.1.1](https://github.com/WFP-VAM/DataBridgesAPIClient/compare/v9.1.0...v9.1.1) (2026-06-03)
+
+
+### Documentation
+
+* update documentation ([465c226](https://github.com/WFP-VAM/DataBridgesAPIClient/commit/465c22683062077a5567cafbb83e71df45fe0335))
+* update documentation ([5a72ac5](https://github.com/WFP-VAM/DataBridgesAPIClient/commit/5a72ac55e2327bcb86cc26433566fc658c221c38))
+
 ## [9.1.0](https://github.com/WFP-VAM/DataBridgesAPIClient/compare/v9.0.0...v9.1.0) (2026-06-03)
 
 
