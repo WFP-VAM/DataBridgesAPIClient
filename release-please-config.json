@@ -15,7 +15,11 @@
   ],
   "packages": {
     ".": {
-      "package-name": "data-bridges-client"
+      "package-name": "data-bridges-client",
+      "include-component-in-tag": false
+      
     }
   }
 }
+
+

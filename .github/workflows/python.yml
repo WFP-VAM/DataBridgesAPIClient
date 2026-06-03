@@ -35,21 +35,3 @@ jobs:
       - name: Run tests
         run: |
           uv run pytest
-
-  deploy-docs:
-    runs-on: ubuntu-latest
-    # Only publish docs on push, not PR.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
-    steps:
-      - uses: actions/checkout@v6
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Install uv and set Python version
-        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
-        with:
-          python-version: "3.13"
-      - name: Install dependencies
-        run: uv sync --dev
