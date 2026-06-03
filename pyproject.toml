@@ -36,7 +36,7 @@ dev = [
 
 [tool.uv]
 default-groups = "all"
-
+index-strategy = "unsafe-best-match"
 
 [build-system]
 requires = ["setuptools"]
@@ -102,4 +102,6 @@ warn_return_any = true
 
 [tool.setuptools]
 packages = ["data_bridges_client"]
+
+
 

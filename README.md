@@ -18,9 +18,18 @@ Python 3.10+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/WFP-VAM/DataBridgesAPI.git
+pip install data-bridges-client \
+  --extra-index-url https://d2i4vvypvg40rv.cloudfront.net/pypi/
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/WFP-VAM/DataBridgesAPI.git`)
+
+
+We recommend using `uv` as the Python package manager:
+
+```
+uv venv .venv && source .venv/bin/activate && uv pip install data-bridges-client \
+  --extra-index-url https://d2i4vvypvg40rv.cloudfront.net/pypi/
+```
 
 Then import the package:
 ```python
