@@ -48,8 +48,8 @@ extension-pkg-whitelist = "pydantic"
 [tool.mypy]
 files = [
   "data_bridges_client",
-  "test",  # auto-generated tests
-  # "tests", # hand-written tests
+  # "test",  # auto-generated tests
+  "tests", # hand-written tests
 ]
 # TODO: enable "strict" once all these individual checks are passing
 # strict = true
