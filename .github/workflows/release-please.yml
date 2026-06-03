@@ -75,12 +75,12 @@ jobs:
 
       - name: Upload distribution to S3
         run: |
-          aws s3 sync dist/ s3://wfp-hip-pypi/pypi/data-bridges-knots/ \
+          aws s3 sync dist/ s3://wfp-hip-pypi/pypi/data-bridges-client/ \
             --exclude "*" --include "*.whl" --include "*.tar.gz"
 
       - name: Regenerate index.html
         run: |
-          aws s3 ls s3://wfp-hip-pypi/pypi/data-bridges-knots/ \
+          aws s3 ls s3://wfp-hip-pypi/pypi/data-bridges-client/ \
             | awk -f scripts/render-simple-index.awk > index.html
-          aws s3 cp index.html s3://wfp-hip-pypi/pypi/data-bridges-knots/index.html \
+          aws s3 cp index.html s3://wfp-hip-pypi/pypi/data-bridges-client/index.html \
             --content-type "text/html"
