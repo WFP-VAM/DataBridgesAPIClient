@@ -30,10 +30,7 @@ from data_bridges_client import rest
 from data_bridges_client.api_response import ApiResponse
 from data_bridges_client.api_response import T as ApiResponseT
 from data_bridges_client.configuration import Configuration
-from data_bridges_client.exceptions import (
-    ApiException,
-    ApiValueError,
-)
+from data_bridges_client.exceptions import ApiException, ApiValueError
 
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
 
