@@ -1662,13 +1662,13 @@ paths:
         description: Date in the format yyyy-mm-dd, refers to the analysis date
         schema:
           type: string
-          format: date-time
+          format: date
       - name: toDate
         in: query
         description: Date in the format yyyy-mm-dd, refers to the analysis date
         schema:
           type: string
-          format: date-time
+          format: date
       - name: iso3
         in: query
         description: ''
