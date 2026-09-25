@@ -11,7 +11,7 @@ keywords = [
     "VAMDataBridges",
 ]
 dependencies = [
-    "urllib3>=2.7.0,<3.0.0",
+    "urllib3 (>=2.7.0,<3.0.0)",
     "python-dateutil (>=2.8.2)",
     "pydantic (>=2.11)",
     "typing-extensions (>=4.7.1)",
@@ -23,20 +23,20 @@ Repository = "https://github.com/WFP-VAM/DataBridgesAPI"
 
 [dependency-groups]
 dev = [
-    "pytest>=9.0.3",
+    "pytest>= 9.0.3",
     "pytest-cov>= 2.8.1",
     "tox>= 3.9.0",
     "flake8>= 4.0.0",
     "types-python-dateutil>= 2.8.19.14",
     "mypy>= 1.5",
-    "isort>=6.1.0",
-    "black>=25.11.0",
-    "ruff>=0.15.15",
+    "isort>=9.0.1",
+    "black>=26.5.1",
+    "ruff>=0.16.9",
 ]
 
 [tool.uv]
 default-groups = "all"
-index-strategy = "unsafe-best-match"
+
 
 [build-system]
 requires = ["setuptools"]
@@ -48,7 +48,7 @@ extension-pkg-whitelist = "pydantic"
 [tool.mypy]
 files = [
   "data_bridges_client",
-  # "test",  # auto-generated tests
+  #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
 # TODO: enable "strict" once all these individual checks are passing
@@ -100,14 +100,6 @@ disallow_untyped_defs = true
 no_implicit_reexport = true
 warn_return_any = true
 
-[[tool.uv.index]]
-name = "pypi"
-url = "https://pypi.org/simple"
+[tool.setuptools]
+packages = ["data_bridges_client"]
 
-[[tool.uv.index]]
-name = "wfp-hip-pypi"
-url = "https://d2i4vvypvg40rv.cloudfront.net/pypi/"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["data_bridges_client*"]

@@ -447,8 +447,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with data_bridges_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_bridges_client.IpcchApi(api_client)
-    from_date = '2013-10-20T19:20:30+01:00' # datetime | Date in the format yyyy-mm-dd, refers to the analysis date (optional)
-    to_date = '2013-10-20T19:20:30+01:00' # datetime | Date in the format yyyy-mm-dd, refers to the analysis date (optional)
+    from_date = '2013-10-20' # date | Date in the format yyyy-mm-dd, refers to the analysis date (optional)
+    to_date = '2013-10-20' # date | Date in the format yyyy-mm-dd, refers to the analysis date (optional)
     iso3 = 'iso3_example' # str |  (optional)
     page = 1 # int |  (optional) (default to 1)
     env = 'env_example' # str | Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org (optional)
@@ -469,8 +469,8 @@ with data_bridges_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from_date** | **datetime**| Date in the format yyyy-mm-dd, refers to the analysis date | [optional] 
- **to_date** | **datetime**| Date in the format yyyy-mm-dd, refers to the analysis date | [optional] 
+ **from_date** | **date**| Date in the format yyyy-mm-dd, refers to the analysis date | [optional] 
+ **to_date** | **date**| Date in the format yyyy-mm-dd, refers to the analysis date | [optional] 
  **iso3** | **str**|  | [optional] 
  **page** | **int**|  | [optional] [default to 1]
  **env** | **str**| Environment.   * &#x60;prod&#x60; - api.vam.wfp.org   * &#x60;dev&#x60; - dev.api.vam.wfp.org | [optional] 
