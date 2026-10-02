@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -57,7 +56,9 @@ class HouseholdSurveyListDTO(BaseModel):
         description="The detailed report on the validation performed on the survey schema",
         alias="surveyValidationReport",
     )
-    survey_original_filename: Annotated[str, Field(min_length=0, strict=True, max_length=256)] | None = Field(
+    survey_original_filename: (
+        Annotated[str, Field(min_length=0, strict=True, max_length=256)] | None
+    ) = Field(
         default=None,
         description="The filename of the survey CSV file",
         alias="surveyOriginalFilename",
@@ -116,12 +117,8 @@ class HouseholdSurveyListDTO(BaseModel):
     survey_sub_category_name: StrictStr | None = Field(
         default=None, alias="surveySubCategoryName"
     )
-    survey_phase_name: StrictStr | None = Field(
-        default=None, alias="surveyPhaseName"
-    )
-    survey_visibility: StrictStr | None = Field(
-        default=None, alias="surveyVisibility"
-    )
+    survey_phase_name: StrictStr | None = Field(default=None, alias="surveyPhaseName")
+    survey_visibility: StrictStr | None = Field(default=None, alias="surveyVisibility")
     is_continuous_monitoring: StrictBool | None = Field(
         default=None, alias="isContinuousMonitoring"
     )
@@ -190,11 +187,9 @@ class HouseholdSurveyListDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -410,7 +405,7 @@ class HouseholdSurveyListDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

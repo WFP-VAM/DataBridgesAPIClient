@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -55,7 +54,9 @@ class SurveyListDTO(BaseModel):
         description="The detailed report on the validation performed on the survey schema",
         alias="surveyValidationReport",
     )
-    survey_original_filename: Annotated[str, Field(min_length=0, strict=True, max_length=256)] | None = Field(
+    survey_original_filename: (
+        Annotated[str, Field(min_length=0, strict=True, max_length=256)] | None
+    ) = Field(
         default=None,
         description="The filename of the survey CSV file",
         alias="surveyOriginalFilename",
@@ -150,11 +151,9 @@ class SurveyListDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -267,7 +266,7 @@ class SurveyListDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

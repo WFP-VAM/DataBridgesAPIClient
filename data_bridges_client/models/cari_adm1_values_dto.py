@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -41,9 +40,7 @@ class CariAdm1ValuesDTO(BaseModel):
     )
     adm0_code: StrictInt | None = Field(default=None, alias="adm0Code")
     adm0_name: StrictStr | None = Field(default=None, alias="adm0Name")
-    cari_indicator_id: StrictInt | None = Field(
-        default=None, alias="cariIndicatorID"
-    )
+    cari_indicator_id: StrictInt | None = Field(default=None, alias="cariIndicatorID")
     cari_indicator_name: StrictStr | None = Field(
         default=None, alias="cariIndicatorName"
     )
@@ -103,11 +100,9 @@ class CariAdm1ValuesDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -213,7 +208,7 @@ class CariAdm1ValuesDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

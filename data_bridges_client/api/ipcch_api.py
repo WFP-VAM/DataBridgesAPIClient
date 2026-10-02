@@ -13,13 +13,7 @@ Do not edit the class manually.
 from datetime import date
 from typing import Annotated, Any
 
-from pydantic import (
-    Field,
-    StrictFloat,
-    StrictInt,
-    StrictStr,
-    validate_call,
-)
+from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
 
 from data_bridges_client.api_client import ApiClient, RequestSerialized
 from data_bridges_client.api_response import ApiResponse
@@ -65,7 +59,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -144,7 +144,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -223,7 +229,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -365,7 +377,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -437,7 +455,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -509,7 +533,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -643,7 +673,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -715,7 +751,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -787,7 +829,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -924,7 +972,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -999,7 +1053,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -1074,7 +1134,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -1220,7 +1286,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -1310,7 +1382,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,
@@ -1400,7 +1478,13 @@ class IpcchApi:
                 description="Environment.   * `prod` - api.vam.wfp.org   * `dev` - dev.api.vam.wfp.org"
             ),
         ] = None,
-        _request_timeout: None | Annotated[StrictFloat, Field(gt=0)] | tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]] = None,
+        _request_timeout: (
+            None
+            | Annotated[StrictFloat, Field(gt=0)]
+            | tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ) = None,
         _request_auth: dict[StrictStr, Any] | None = None,
         _content_type: StrictStr | None = None,
         _headers: dict[StrictStr, Any] | None = None,

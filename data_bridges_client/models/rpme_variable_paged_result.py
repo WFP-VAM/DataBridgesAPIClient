@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -68,12 +67,10 @@ class RpmeVariablePagedResult(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "items",
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "items",
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -121,7 +118,7 @@ class RpmeVariablePagedResult(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

@@ -29,10 +29,7 @@ from data_bridges_client import rest
 from data_bridges_client.api_response import ApiResponse
 from data_bridges_client.api_response import T as ApiResponseT
 from data_bridges_client.configuration import Configuration
-from data_bridges_client.exceptions import (
-    ApiException,
-    ApiValueError,
-)
+from data_bridges_client.exceptions import ApiException, ApiValueError
 
 RequestSerialized = tuple[str, str, dict[str, str], str | None, list[str]]
 
@@ -186,7 +183,7 @@ class ApiClient:
             for k, v in path_params:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
-                    "{%s}" % k, quote(str(v), safe=config.safe_chars_for_path_param)
+                    f"{{{k}}}", quote(str(v), safe=config.safe_chars_for_path_param)
                 )
 
         # post parameters
@@ -259,8 +256,8 @@ class ApiClient:
                 _request_timeout=_request_timeout,
             )
 
-        except ApiException as e:
-            raise e
+        except ApiException:
+            raise
 
         return response_data
 
@@ -608,7 +605,7 @@ class ApiClient:
             else:
                 raise ValueError("Unsupported file value")
             mimetype = mimetypes.guess_type(filename)[0] or "application/octet-stream"
-            params.append(tuple([k, tuple([filename, filedata, mimetype])]))
+            params.append((k, (filename, filedata, mimetype)))
         return params
 
     def select_header_accept(self, accepts: list[str]) -> str | None:

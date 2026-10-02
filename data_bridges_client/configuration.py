@@ -456,7 +456,7 @@ class Configuration:
             # then add file handler and remove stream handler.
             self.logger_file_handler = logging.FileHandler(self.__logger_file)
             self.logger_file_handler.setFormatter(self.logger_formatter)
-            for _, logger in self.logger.items():
+            for logger in self.logger.values():
                 logger.addHandler(self.logger_file_handler)
 
     @property
@@ -478,14 +478,14 @@ class Configuration:
         self.__debug = value
         if self.__debug:
             # if debug status is True, turn on debug logging
-            for _, logger in self.logger.items():
+            for logger in self.logger.values():
                 logger.setLevel(logging.DEBUG)
             # turn on httplib debug
             httplib.HTTPConnection.debuglevel = 1
         else:
             # if debug status is False, turn off debug logging,
             # setting log level to default `logging.WARNING`
-            for _, logger in self.logger.items():
+            for logger in self.logger.values():
                 logger.setLevel(logging.WARNING)
             # turn off httplib debug
             httplib.HTTPConnection.debuglevel = 0
@@ -533,7 +533,7 @@ class Configuration:
                 self.api_key_prefix.get(alias) if alias is not None else None,
             )
             if prefix:
-                return "%s %s" % (prefix, key)
+                return f"{prefix} {key}"
             else:
                 return key
 
@@ -633,8 +633,8 @@ class Configuration:
                 and used_value not in variable["enum_values"]
             ):
                 raise ValueError(
-                    "The variable `{0}` in the host URL has invalid value "
-                    "{1}. Must be {2}.".format(
+                    "The variable `{}` in the host URL has invalid value "
+                    "{}. Must be {}.".format(
                         variable_name, variables[variable_name], variable["enum_values"]
                     )
                 )

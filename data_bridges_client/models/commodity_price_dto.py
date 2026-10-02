@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -35,9 +34,7 @@ class CommodityPriceDTO(BaseModel):
     commodity_id: StrictInt | None = Field(default=None, alias="commodityId")
     market_id: StrictInt | None = Field(default=None, alias="marketId")
     price_type_id: StrictInt | None = Field(default=None, alias="priceTypeId")
-    commodity_unit_id: StrictInt | None = Field(
-        default=None, alias="commodityUnitId"
-    )
+    commodity_unit_id: StrictInt | None = Field(default=None, alias="commodityUnitId")
     currency_id: StrictInt | None = Field(default=None, alias="currencyId")
     commodity_name: StrictStr | None = Field(default=None, alias="commodityName")
     market_name: StrictStr | None = Field(default=None, alias="marketName")
@@ -144,11 +141,9 @@ class CommodityPriceDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -309,7 +304,7 @@ class CommodityPriceDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

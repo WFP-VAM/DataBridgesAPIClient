@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -64,11 +63,9 @@ class Geometry(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -105,7 +102,7 @@ class Geometry(BaseModel):
             {"type": obj.get("type"), "coordinates": obj.get("coordinates")}
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

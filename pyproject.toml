@@ -37,6 +37,10 @@ dev = [
 [tool.uv]
 default-groups = "all"
 
+[tool.ruff]
+exclude = [
+"data_bridges_client",
+]
 
 [build-system]
 requires = ["setuptools"]

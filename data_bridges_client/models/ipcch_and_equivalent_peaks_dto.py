@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -28,23 +27,15 @@ class IpcchAndEquivalentPeaksDTO(BaseModel):
     IpcchAndEquivalentPeaksDTO
     """
 
-    regional_bureau_id: StrictInt | None = Field(
-        default=None, alias="regionalBureauID"
-    )
+    regional_bureau_id: StrictInt | None = Field(default=None, alias="regionalBureauID")
     regional_bureau_name: StrictStr | None = Field(
         default=None, alias="regionalBureauName"
     )
     iso3_alpha3: StrictStr | None = Field(default=None, alias="iso3Alpha3")
     country_name: StrictStr | None = Field(default=None, alias="countryName")
-    phase3_population: StrictInt | None = Field(
-        default=None, alias="phase3Population"
-    )
-    phase4_population: StrictInt | None = Field(
-        default=None, alias="phase4Population"
-    )
-    phase5_population: StrictInt | None = Field(
-        default=None, alias="phase5Population"
-    )
+    phase3_population: StrictInt | None = Field(default=None, alias="phase3Population")
+    phase4_population: StrictInt | None = Field(default=None, alias="phase4Population")
+    phase5_population: StrictInt | None = Field(default=None, alias="phase5Population")
     phase3_plus_population: StrictInt | None = Field(
         default=None, alias="phase3PlusPopulation"
     )
@@ -93,11 +84,9 @@ class IpcchAndEquivalentPeaksDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -197,7 +186,7 @@ class IpcchAndEquivalentPeaksDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

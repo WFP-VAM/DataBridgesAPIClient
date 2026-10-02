@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -134,14 +133,14 @@ class IpcHistoricalDatumDto(BaseModel):
     phase5_percentage_projected: StrictFloat | StrictInt | None = Field(
         default=None, alias="phase5PercentageProjected"
     )
-    phase3_plus_population_second_projected: StrictFloat | StrictInt | None = (
-        Field(default=None, alias="phase3PlusPopulationSecondProjected")
+    phase3_plus_population_second_projected: StrictFloat | StrictInt | None = Field(
+        default=None, alias="phase3PlusPopulationSecondProjected"
     )
-    phase3_plus_percentage_second_projected: StrictFloat | StrictInt | None = (
-        Field(default=None, alias="phase3PlusPercentageSecondProjected")
+    phase3_plus_percentage_second_projected: StrictFloat | StrictInt | None = Field(
+        default=None, alias="phase3PlusPercentageSecondProjected"
     )
-    estimated_population_second_projected: StrictFloat | StrictInt | None = (
-        Field(default=None, alias="estimatedPopulationSecondProjected")
+    estimated_population_second_projected: StrictFloat | StrictInt | None = Field(
+        default=None, alias="estimatedPopulationSecondProjected"
     )
     phase1_population_second_projected: StrictFloat | StrictInt | None = Field(
         default=None, alias="phase1PopulationSecondProjected"
@@ -260,11 +259,9 @@ class IpcHistoricalDatumDto(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -771,7 +768,7 @@ class IpcHistoricalDatumDto(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 

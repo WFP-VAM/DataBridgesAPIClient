@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -281,7 +280,7 @@ class RESTClientObject:
                 # Pass a `string` parameter directly in the body to support
                 # other content types than JSON when `body` argument is
                 # provided in serialized form.
-                elif isinstance(body, str) or isinstance(body, bytes):
+                elif isinstance(body, (str, bytes)):
                     r = self.pool_manager.request(
                         method,
                         url,

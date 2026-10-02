@@ -1,4 +1,3 @@
-
 """
 VAMDataBridges
 
@@ -44,9 +43,7 @@ class MFIProcessedDataDTO(BaseModel):
     market_longitude: StrictFloat | StrictInt | None = Field(
         default=None, alias="marketLongitude"
     )
-    regional_bureau_id: StrictInt | None = Field(
-        default=None, alias="regionalBureauID"
-    )
+    regional_bureau_id: StrictInt | None = Field(default=None, alias="regionalBureauID")
     regional_bureau_name: StrictStr | None = Field(
         default=None, alias="regionalBureauName"
     )
@@ -70,9 +67,7 @@ class MFIProcessedDataDTO(BaseModel):
         default=None, alias="tradersSampleSize"
     )
     base_xls_form_id: StrictInt | None = Field(default=None, alias="baseXlsFormID")
-    base_xls_form_name: StrictStr | None = Field(
-        default=None, alias="baseXlsFormName"
-    )
+    base_xls_form_name: StrictStr | None = Field(default=None, alias="baseXlsFormName")
     additional_properties: dict[str, Any] = {}
     __properties: ClassVar[list[str]] = [
         "surveyID",
@@ -134,11 +129,9 @@ class MFIProcessedDataDTO(BaseModel):
           are ignored.
         * Fields in `self.additional_properties` are added to the output dict.
         """
-        excluded_fields: set[str] = set(
-            [
-                "additional_properties",
-            ]
-        )
+        excluded_fields: set[str] = {
+            "additional_properties",
+        }
 
         _dict = self.model_dump(
             by_alias=True,
@@ -284,7 +277,7 @@ class MFIProcessedDataDTO(BaseModel):
             }
         )
         # store additional fields in additional_properties
-        for _key in obj.keys():
+        for _key in obj:
             if _key not in cls.__properties:
                 _obj.additional_properties[_key] = obj.get(_key)
 
