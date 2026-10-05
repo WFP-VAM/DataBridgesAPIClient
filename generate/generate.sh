@@ -10,6 +10,17 @@ cd "$(dirname "$0")/.."
 
 make cleanup
 
+# generate/swagger.yaml is kept identical to the spec published by the API.
+# Local corrections live in generate/patches/ and are applied to a copy, so
+# that they survive a spec refresh and fail loudly once they stop applying.
+spec="$(mktemp -d)/swagger.yaml"
+cp generate/swagger.yaml "$spec"
+for spec_patch in generate/patches/*.patch; do
+    [ -e "$spec_patch" ] || continue
+    echo "Applying $spec_patch"
+    patch --quiet "$spec" < "$spec_patch"
+done
+
 # Remove the generated sources so that dropped endpoints and models do not linger
 rm -rf data_bridges_client/api data_bridges_client/models docs test
 
@@ -19,7 +30,7 @@ else
     generator=(npx --yes @openapitools/openapi-generator-cli)
 fi
 
-"${generator[@]}" generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --additional-properties=packageVersion=9.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+"${generator[@]}" generate -g python -i "$spec" -o . --package-name data_bridges_client --additional-properties=packageVersion=9.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
 
 uv sync
 
