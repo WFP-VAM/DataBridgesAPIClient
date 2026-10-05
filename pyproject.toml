@@ -37,10 +37,9 @@ dev = [
 [tool.uv]
 default-groups = "all"
 
-[tool.ruff]
-exclude = [
-"data_bridges_client",
-]
+[tool.ruff.lint.per-file-ignores]
+# Raised by the OpenAPI Generator templates, which we do not control
+"data_bridges_client/**" = ["BLE001", "D419", "RUF012", "S110", "TRY004", "TRY203"]
 
 [build-system]
 requires = ["setuptools"]
