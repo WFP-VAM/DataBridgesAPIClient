@@ -21,6 +21,9 @@ for spec_patch in generate/patches/*.patch; do
     patch --quiet "$spec" < "$spec_patch"
 done
 
+# The version is owned by release-please
+version=$(sed -E 's/.*"\.": *"([^"]+)".*/\1/' .release-please-manifest.json)
+
 # Remove the generated sources so that dropped endpoints and models do not linger
 rm -rf data_bridges_client/api data_bridges_client/models docs test
 
@@ -30,7 +33,7 @@ else
     generator=(npx --yes @openapitools/openapi-generator-cli)
 fi
 
-"${generator[@]}" generate -g python -i "$spec" -o . --package-name data_bridges_client --additional-properties=packageVersion=9.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+"${generator[@]}" generate -g python -i "$spec" -o . --package-name data_bridges_client --additional-properties=packageVersion="$version" --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
 
 uv sync
 
