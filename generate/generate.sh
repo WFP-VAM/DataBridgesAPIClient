@@ -23,6 +23,7 @@ mv generate/release-please-config.json release-please-config.json
 uvx migrate-to-uv
 
 uv lock --upgrade
+uv sync
 uv add --group dev isort black ruff
 uv add httpx
 
