@@ -1,8 +1,3 @@
-.github/workflows/python.yml
-.gitignore
-.gitlab-ci.yml
-.travis.yml
-README.md
 data_bridges_client/__init__.py
 data_bridges_client/api/__init__.py
 data_bridges_client/api/commodities_api.py
@@ -172,12 +167,6 @@ docs/XlsFormFieldsDTO.md
 docs/XlsFormListChoiceDTO.md
 docs/XlsFormListChoicesDTO.md
 docs/XlsFormsApi.md
-git_push.sh
-pyproject.toml
-requirements.txt
-setup.cfg
-setup.py
-test-requirements.txt
 test/__init__.py
 test/test_bad_request_dto.py
 test/test_cari_adm0_values_dto.py
@@ -259,4 +248,3 @@ test/test_xls_form_fields_dto.py
 test/test_xls_form_list_choice_dto.py
 test/test_xls_form_list_choices_dto.py
 test/test_xls_forms_api.py
-tox.ini

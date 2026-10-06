@@ -1,0 +1,20 @@
+diff --git a/generate/swagger.yaml b/generate/swagger.yaml
+index 3949c06..a6e59a3 100644
+--- a/generate/swagger.yaml
++++ b/generate/swagger.yaml
+@@ -1662,13 +1662,13 @@ paths:
+         description: Date in the format yyyy-mm-dd, refers to the analysis date
+         schema:
+           type: string
+-          format: date-time
++          format: date
+       - name: toDate
+         in: query
+         description: Date in the format yyyy-mm-dd, refers to the analysis date
+         schema:
+           type: string
+-          format: date-time
++          format: date
+       - name: iso3
+         in: query
+         description: ''

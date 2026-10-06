@@ -2756,8 +2756,7 @@ class IncubationApi:
             StrictInt | None, Field(description="The ID of the survey")
         ] = None,
         scroll_id: Annotated[
-            StrictInt | None,
-            Field(description="The pointer to the next paged results"),
+            StrictInt | None, Field(description="The pointer to the next paged results")
         ] = None,
         page_size: StrictInt | None = None,
         start_date: Annotated[
@@ -2882,8 +2881,7 @@ class IncubationApi:
             StrictInt | None, Field(description="The ID of the survey")
         ] = None,
         scroll_id: Annotated[
-            StrictInt | None,
-            Field(description="The pointer to the next paged results"),
+            StrictInt | None, Field(description="The pointer to the next paged results")
         ] = None,
         page_size: StrictInt | None = None,
         start_date: Annotated[
@@ -3008,8 +3006,7 @@ class IncubationApi:
             StrictInt | None, Field(description="The ID of the survey")
         ] = None,
         scroll_id: Annotated[
-            StrictInt | None,
-            Field(description="The pointer to the next paged results"),
+            StrictInt | None, Field(description="The pointer to the next paged results")
         ] = None,
         page_size: StrictInt | None = None,
         start_date: Annotated[

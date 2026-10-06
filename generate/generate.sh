@@ -1,40 +1,47 @@
 #!/bin/bash
+# Regenerates the client from generate/swagger.yaml.
+#
+# Only the generated code is replaced. Hand-maintained files (pyproject.toml,
+# README.md, the GitHub workflows, ...) are listed in .openapi-generator-ignore
+# so that the generator leaves them alone.
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
 make cleanup
-mv data_bridges_client/token.py generate/
-mv README.md generate/README-backup.md
-mv LICENSE.md generate/LICENSE.md
-mv Makefile generate/Makefile-backup
-mv .release-please-manifest.json generate/.release-please-manifest.json
-mv release-please-config.json generate/release-please-config.json
 
-rm -rf test docs data_bridges_client
-rm ./*
-mkdir data_bridges_client
-mv generate/token.py data_bridges_client/
+# generate/swagger.yaml is kept identical to the spec published by the API.
+# Local corrections live in generate/patches/ and are applied to a copy, so
+# that they survive a spec refresh and fail loudly once they stop applying.
+spec="$(mktemp -d)/swagger.yaml"
+cp generate/swagger.yaml "$spec"
+for spec_patch in generate/patches/*.patch; do
+    [ -e "$spec_patch" ] || continue
+    echo "Applying $spec_patch"
+    patch --quiet "$spec" < "$spec_patch"
+done
 
+# The version is owned by release-please
+version=$(sed -E 's/.*"\.": *"([^"]+)".*/\1/' .release-please-manifest.json)
 
-openapi-generator-cli generate -g python -i generate/swagger.yaml -o . --package-name data_bridges_client --additional-properties=packageVersion=9.0.0 --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
-mv generate/README-backup.md README.md
-mv generate/LICENSE.md LICENSE.md
-mv generate/Makefile-backup Makefile
-mv generate/.release-please-manifest.json .release-please-manifest.json
-mv generate/release-please-config.json release-please-config.json
+# Remove the generated sources so that dropped endpoints and models do not linger
+rm -rf data_bridges_client/api data_bridges_client/models docs test
 
-uvx migrate-to-uv
+if command -v openapi-generator-cli > /dev/null; then
+    generator=(openapi-generator-cli)
+else
+    generator=(npx --yes @openapitools/openapi-generator-cli)
+fi
 
-uv lock --upgrade
+"${generator[@]}" generate -g python -i "$spec" -o . --package-name data_bridges_client --additional-properties=packageVersion="$version" --git-user-id WFP-VAM --git-repo-id DataBridgesAPI
+
 uv sync
-uv add --group dev isort black ruff
-uv add httpx
 
-echo '.env' >> .gitignore
-
-echo $'\n[tool.setuptools]\npackages = ["data_bridges_client"]\n' >> pyproject.toml
-
-rm setup.py setup.cfg requirements.txt test-requirements.txt tox.ini .travis.yml
-
-uv run isort --settings-path pyproject.toml ./
-uv run black --fast --config pyproject.toml ./ 
-uv run ruff check . --fix
+# Lint and format the generated code only. Ruff goes first, as its fixes leave
+# formatting behind for black to tidy up.
+generated=(data_bridges_client test)
+uv run ruff check "${generated[@]}" --fix --unsafe-fixes
+uv run isort --settings-path pyproject.toml "${generated[@]}"
+uv run black --fast --config pyproject.toml "${generated[@]}"
 
 echo "Done."

@@ -79,7 +79,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = "OpenAPI-Generator/9.0.0/python"
+        self.user_agent = "OpenAPI-Generator/9.0.1/python"
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -787,8 +787,7 @@ class ApiClient:
             return string
         except ValueError:
             raise rest.ApiException(
-                status=0,
-                reason=(f"Failed to parse `{string}` as datetime object"),
+                status=0, reason=(f"Failed to parse `{string}` as datetime object")
             )
 
     def __deserialize_enum(self, data, klass):
