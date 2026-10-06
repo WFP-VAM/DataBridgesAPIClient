@@ -1,5 +1,18 @@
 # Changelog
 
+## [9.0.2](https://github.com/WFP-VAM/DataBridgesAPIClient/compare/v9.0.1...v9.0.2) (2026-10-06)
+
+
+### Bug Fixes
+
+* include api and models subpackages in the wheel ([8788d42](https://github.com/WFP-VAM/DataBridgesAPIClient/commit/8788d42ab5d0f09ef507782246958f963de1112b))
+
+
+### Documentation
+
+* describe the regeneration workflow ([e5ed86e](https://github.com/WFP-VAM/DataBridgesAPIClient/commit/e5ed86edcc7268ea19cc6e64712ef24a837eaa23))
+* restore 9.0.0 changelog entries ([23f742d](https://github.com/WFP-VAM/DataBridgesAPIClient/commit/23f742d99702f5afd2512d434cdd14d899c90f67))
+
 ## [9.0.1](https://github.com/WFP-VAM/DataBridgesAPIClient/compare/v9.0.0...v9.0.1) (2026-10-05)
 
 
